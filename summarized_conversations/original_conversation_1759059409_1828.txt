@@ -1,0 +1,1 @@
+{'role': 'user', 'content': "<tool_result> <str-replace> ToolResult(success=False, output='Multiple occurrences found in lines [26, 42, 155, 247]. Please ensure string is unique') </str-replace> </tool_result>"}

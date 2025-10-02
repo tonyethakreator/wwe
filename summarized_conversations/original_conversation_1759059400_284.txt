@@ -1,0 +1,1 @@
+{'role': 'user', 'content': '<tool_result> <execute-command> ToolResult(success=True, output=\'{\\n  "output": "   total 4\\\\n   drwxr-xr-x 2 root root   10 Sep 27 02:17 .\\\\n   drwxr-xr-x 4 root root 4096 Sep 27 03:11 ..\\\\n",\\n  "exit_code": 0,\\n  "cwd": "/workspace"\\n}\') </execute-command> </tool_result>'}

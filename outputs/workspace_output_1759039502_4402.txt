@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWE Access Organization - Home</title>
+    <meta name="description" content="WWE Access Organization - Your ultimate source for WWE championship information and superstar profiles">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="WWE Access Organization Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="pages/championships.html" class="nav-link">Championships</a></li>
+                    <li class="nav-item"><a href="pages/superstars.html" class="nav-link">Superstars</a></li>
+                    <li class="nav-item"><a href="pages/events.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="pages/about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="pages/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('assets/images/hero-bg.jpg');">
+        <div class="hero-content">
+            <h1 class="animate-on-scroll" data-animation="fade-in">WWE ACCESS ORGANIZATION</h1>
+            <p class="animate-on-scroll" data-animation="fade-in">Your ultimate source for WWE championship information and superstar profiles</p>
+            <div class="animate-on-scroll" data-animation="fade-in">
+                <a href="pages/championships.html" class="btn">View Championships</a>
+                <a href="pages/superstars.html" class="btn">Explore Superstars</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Champions Section -->
+    <section class="champions">
+        <div class="container">

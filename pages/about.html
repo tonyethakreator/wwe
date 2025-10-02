@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About WWE & TKO - WWE Access Organization</title>
+    <meta name="description" content="Learn about WWE, TKO Group Holdings, and the history of sports entertainment">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <style>
+        /* Additional styles specific to about page */
+        .about-section {
+            margin-bottom: 4rem;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: var(--accent-color);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--wwe-gray);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-box {
+            background-color: var(--wwe-gray);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+        
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .leader-card {
+            background-color: var(--wwe-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .leader-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .leader-info {
+            padding: 1.5rem;
+        }
+        
+        .leader-name {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        
+        .leader-title {
+            color: var(--text-color);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .leadership-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .timeline-right {
+                left: 0;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="championships.html" class="nav-link">Championships</a></li>
+                    <li class="nav-item"><a href="superstars.html" class="nav-link">Superstars</a></li>
+                    <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background-image: url('../assets/images/about-bg.jpg');">
+        <div class="container">
+            <h1 class="page-title">About WWE & TKO Group Holdings</h1>
+            <p class="page-subtitle">The global leaders in sports entertainment</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container section">
+        <!-- About WWE -->
+        <div class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">World Wrestling Entertainment (WWE)</h2>
+                <p class="section-description">The premier professional wrestling and sports entertainment company in the world</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="WWE Arena">
+                </div>
+                <div class="about-content">
+                    <h3>Global Entertainment Powerhouse</h3>
+                    <p>World Wrestling Entertainment, Inc. (WWE) is an integrated media and entertainment company that has been delivering world-class content to a global audience for over 40 years. The company is primarily known for professional wrestling, but has expanded into various fields including film, American football, and various other business ventures.</p>
+                    <p>WWE's programming reaches more than 900 million homes worldwide in 28 languages through world-class distribution partners including NBCUniversal, FOX Sports, BT Sport, Sony India and Rogers. The award-winning WWE Network includes all live pay-per-views, scheduled programming and a massive video-on-demand library and is currently available in more than 180 countries.</p>
+                    <p>As of 2025, WWE continues to evolve its content strategy, focusing on premium live events, streaming partnerships, and expanding its global footprint while maintaining its position as the leader in sports entertainment.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About TKO Group Holdings -->
+        <div class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">TKO Group Holdings</h2>
+                <p class="section-description">The merger of WWE and UFC creating a global sports entertainment powerhouse</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>A New Era in Sports Entertainment</h3>
+                    <p>TKO Group Holdings, Inc. was formed in September 2023 through the merger of Endeavor's Ultimate Fighting Championship (UFC) and World Wrestling Entertainment (WWE). This historic merger created one of the largest publicly traded sports and entertainment companies in the world, with a combined enterprise value of over $21 billion.</p>
+                    <p>As a unified company, TKO leverages the global reach, passionate fan bases, and complementary content offerings of both WWE and UFC to maximize value for shareholders, partners, and the millions of fans around the world. The company benefits from significant operating synergies, enhanced content creation capabilities, and expanded distribution channels.</p>
+                    <p>Under the TKO umbrella, both WWE and UFC maintain their distinct brand identities while collaborating on strategic initiatives that strengthen their positions in the evolving media landscape. The company continues to innovate in content delivery, fan engagement, and global expansion, setting new standards for sports entertainment worldwide.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="TKO Group Holdings">
+                </div>
+            </div>
+        </div>
+        
+        <!-- WWE History Timeline -->
+        <div class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">WWE History Timeline</h2>
+                <p class="section-description">The evolution of sports entertainment</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">1953</h3>
+                        <p>Capitol Wrestling Corporation (CWC) is founded by Jess McMahon and Toots Mondt, laying the foundation for what would eventually become WWE.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">1963</h3>
+                        <p>The World Wide Wrestling Federation (WWWF) is established after breaking away from the National Wrestling Alliance (NWA).</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">1979</h3>
+                        <p>The company is renamed to World Wrestling Federation (WWF) as it begins expanding nationally.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">1982</h3>
+                        <p>Vince McMahon Jr. purchases the company from his father and begins transforming it into a national promotion.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">1985</h3>
+                        <p>The first WrestleMania is held at Madison Square Garden, marking the beginning of WWE's flagship annual event.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">1993</h3>
+                        <p>Monday Night Raw debuts on USA Network, becoming one of the longest-running weekly episodic television shows in history.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">1997-2002</h3>
+                        <p>The "Attitude Era" transforms wrestling with edgier content and iconic superstars like "Stone Cold" Steve Austin, The Rock, and D-Generation X.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">2002</h3>
+                        <p>The company is renamed to World Wrestling Entertainment (WWE) following a lawsuit from the World Wildlife Fund.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">2008</h3>
+                        <p>WWE programming shifts to PG-rated content, focusing on family-friendly entertainment.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">2014</h3>
+                        <p>WWE Network launches as a subscription-based streaming service, revolutionizing how fans consume wrestling content.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">2019</h3>
+                        <p>SmackDown moves to FOX in a landmark television deal worth over $1 billion.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">2023</h3>
+                        <p>WWE merges with UFC under Endeavor to form TKO Group Holdings, creating a global sports entertainment powerhouse.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">2024</h3>
+                        <p>WWE content moves to Netflix in a major streaming deal, further expanding its global reach.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WWE By The Numbers -->
+        <div class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">WWE By The Numbers</h2>
+                <p class="section-description">The global impact of WWE</p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">1B+</div>
+                    <div class="stat-label">Social Media Followers</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">180+</div>
+                    <div class="stat-label">Countries Reached</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Years of WrestleMania</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TKO Leadership -->
+        <div class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">TKO Leadership</h2>
+                <p class="section-description">The visionaries guiding the future of sports entertainment</p>
+            </div>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="leader-image" alt="Ari Emanuel">
+                    <div class="leader-info">
+                        <h3 class="leader-name">Ari Emanuel</h3>
+                        <p class="leader-title">CEO, TKO Group Holdings</p>
+                        <p>As CEO of TKO Group Holdings, Ari Emanuel oversees the strategic direction of both WWE and UFC, leveraging his extensive experience in entertainment and sports to drive growth and innovation across the company's portfolio.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="leader-image" alt="Nick Khan">
+                    <div class="leader-info">
+                        <h3 class="leader-name">Nick Khan</h3>
+                        <p class="leader-title">President, WWE</p>
+                        <p>Nick Khan serves as President of WWE, focusing on business operations, content strategy, and media rights negotiations. His leadership has been instrumental in securing landmark deals that have expanded WWE's global reach.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="leader-image" alt="Paul Levesque">
+                    <div class="leader-info">
+                        <h3 class="leader-name">Paul "Triple H" Levesque</h3>
+                        <p class="leader-title">Chief Content Officer, WWE</p>
+                        <p>As WWE's Chief Content Officer, Paul Levesque (known to fans as Triple H) oversees all aspects of creative development, including storylines, character development, and in-ring product, bringing his decades of experience as a performer to the executive role.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WWE Entertainment Offerings -->
+        <div class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">WWE Entertainment Offerings</h2>
+                <p class="section-description">A diverse portfolio of content and experiences</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Television Programming</h3>
+                    <p>WWE produces several weekly television shows including Monday Night Raw, Friday Night SmackDown, and NXT, reaching hundreds of millions of viewers worldwide through broadcast partners and streaming platforms.</p>
+                    
+                    <h3>Premium Live Events</h3>
+                    <p>WWE hosts monthly premium live events (formerly pay-per-views) including WrestleMania, Royal Rumble, SummerSlam, and Survivor Series, which attract global audiences and generate significant revenue.</p>
+                    
+                    <h3>WWE Network & Streaming</h3>
+                    <p>WWE's content is available on various streaming platforms including Netflix, Peacock (in the US), and WWE Network (internationally), offering subscribers access to live events, original programming, and an extensive content library.</p>
+                    
+                    <h3>Live Events</h3>
+                    <p>WWE produces over 300 live events annually across the globe, allowing fans to experience the excitement of WWE in person through arena shows, stadium events, and international tours.</p>
+                </div>
+                <div class="about-content">
+                    <h3>WWE Studios</h3>
+                    <p>WWE Studios produces feature films, documentaries, and television shows featuring WWE Superstars and original content for various distribution platforms.</p>
+                    
+                    <h3>Consumer Products</h3>
+                    <p>WWE's merchandise includes action figures, apparel, video games, home entertainment, and collectibles, available through retailers worldwide and WWE's online shop.</p>
+                    
+                    <h3>Digital & Social Media</h3>
+                    <p>WWE maintains a massive digital presence with over 1 billion social media followers and billions of video views annually across platforms including YouTube, Instagram, TikTok, X (formerly Twitter), and Facebook.</p>
+                    
+                    <h3>WWE 2K Games</h3>
+                    <p>The popular WWE 2K video game franchise allows fans to control their favorite Superstars in realistic wrestling simulations, with annual releases featuring updated rosters and gameplay innovations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+                    <p>Your ultimate source for WWE championship information and superstar profiles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="championships.html">Championships</a></li>
+                        <li><a href="superstars.html">Superstars</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Championships</h4>
+                    <ul>
+                        <li><a href="championships.html#world">World Championships</a></li>
+                        <li><a href="championships.html#womens">Women's Championships</a></li>
+                        <li><a href="championships.html#midcard">Midcard Championships</a></li>
+                        <li><a href="championships.html#tag">Tag Team Championships</a></li>
+                        <li><a href="championships.html#nxt">NXT Championships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> wwesuperstarsbooking@gmail.com</li>
+                        
+                        <li><i class="fas fa-map-marker-alt"></i> Stamford, CT, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 WWE Access Organization. All rights reserved.</p>
+                <p>This is a fan site and is not affiliated with WWE. WWE is a registered trademark of World Wrestling Entertainment, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

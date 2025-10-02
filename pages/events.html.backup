@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWE Events & Bookings - WWE Access Organization</title>
+    <meta name="description" content="Book WWE Superstars for your events - Birthday Parties, Meet & Greets, Grand Openings and more">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <style>
+        /* Additional styles specific to events page */
+        .event-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .event-tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .event-tab.active {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        
+        .event-tab:hover:not(.active) {
+            background-color: var(--wwe-gray);
+        }
+        
+        .event-content {
+            display: none;
+        }
+        
+        .event-content.active {
+            display: block;
+        }
+        
+        .event-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background-color: var(--wwe-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .event-image {
+            height: 100%;
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .event-info {
+            padding: 2rem;
+        }
+        
+        .event-title {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.8rem;
+        }
+        
+        .event-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 1rem 0;
+        }
+        
+        .event-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-feature i {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+        
+        .booking-form {
+            background-color: var(--wwe-dark-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--wwe-gray);
+            color: var(--text-color);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+        }
+        
+        @media (max-width: 768px) {
+            .event-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-image {
+                min-height: 200px;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="championships.html" class="nav-link">Championships</a></li>
+                    <li class="nav-item"><a href="superstars.html" class="nav-link">Superstars</a></li>
+                    <li class="nav-item"><a href="events.html" class="nav-link active">Events</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background-image: url('../assets/images/events-bg.jpg');">
+        <div class="container">
+            <h1 class="page-title">Book WWE Superstars For Your Events</h1>
+            <p class="page-subtitle">Make your special occasion unforgettable with a WWE Superstar appearance</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container section">
+        <div class="section-header">
+            <h2 class="section-title">Available Event Types</h2>
+            <p class="section-description">Choose from a variety of event types where WWE Superstars can make an appearance</p>
+        </div>
+
+        <div class="event-tabs">
+            <div class="event-tab active" data-tab="birthday">Birthday Parties</div>
+            <div class="event-tab" data-tab="meet-greet">Meet & Greets</div>
+            <div class="event-tab" data-tab="grand-opening">Grand Openings</div>
+            <div class="event-tab" data-tab="corporate">Corporate Events</div>
+            <div class="event-tab" data-tab="other">Other Events</div>
+        </div>
+
+        <!-- Birthday Parties -->
+        <div class="event-content active" id="birthday">
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="event-info">
+                    <h3 class="event-title">WWE Superstar Birthday Party Experience</h3>
+                    <p class="event-price">Starting at $5,000</p>
+                    <p class="event-description">Make your child's birthday party an unforgettable experience with a WWE Superstar appearance! Our birthday package includes a personal appearance by a WWE Superstar who will interact with guests, take photos, sign autographs, and even participate in birthday activities.</p>
+                    
+                    <div class="event-features">
+                        <h4>Package Includes:</h4>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>2-hour appearance by a WWE Superstar</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Photo opportunities with all guests</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Autograph session</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Special birthday message and celebration</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>WWE merchandise gift for the birthday person</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#booking-form" class="btn">Book This Event</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet & Greets -->
+        <div class="event-content" id="meet-greet">
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="event-info">
+                    <h3 class="event-title">WWE Superstar Meet & Greet</h3>
+                    <p class="event-price">Starting at $7,500</p>
+                    <p class="event-description">Organize an exclusive meet and greet event with a WWE Superstar for your fans, customers, or community. This package is perfect for retail stores, malls, conventions, or special fan events where you want to create excitement and draw crowds.</p>
+                    
+                    <div class="event-features">
+                        <h4>Package Includes:</h4>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>3-hour appearance by a WWE Superstar</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional photo opportunities</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Autograph session</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Q&A session with fans</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Promotional materials for your event</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#booking-form" class="btn">Book This Event</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grand Openings -->
+        <div class="event-content" id="grand-opening">
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="event-info">
+                    <h3 class="event-title">Grand Opening with WWE Superstar</h3>
+                    <p class="event-price">Starting at $10,000</p>
+                    <p class="event-description">Make a big splash with your business grand opening by having a WWE Superstar attend! This package is designed to generate maximum publicity and attendance for your new business, store opening, or facility launch.</p>
+                    
+                    <div class="event-features">
+                        <h4>Package Includes:</h4>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>4-hour appearance by a WWE Superstar</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ribbon cutting ceremony participation</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Media interviews and photo opportunities</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Meet and greet with customers/attendees</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Social media promotion before the event</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#booking-form" class="btn">Book This Event</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Corporate Events -->
+        <div class="event-content" id="corporate">
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="event-info">
+                    <h3 class="event-title">Corporate Event with WWE Superstar</h3>
+                    <p class="event-price">Starting at $15,000</p>
+                    <p class="event-description">Elevate your corporate event with a WWE Superstar appearance. Whether it's a company party, team-building event, or motivational speaking engagement, WWE Superstars can bring energy, inspiration, and star power to your corporate function.</p>
+                    
+                    <div class="event-features">
+                        <h4>Package Includes:</h4>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customized appearance based on your needs</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Motivational speech option</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Team-building activities led by the Superstar</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Photo opportunities with executives and employees</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Q&A session tailored to your company's values</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#booking-form" class="btn">Book This Event</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Events -->
+        <div class="event-content" id="other">
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="event-info">
+                    <h3 class="event-title">Custom WWE Superstar Appearances</h3>
+                    <p class="event-price">Contact for Pricing</p>
+                    <p class="event-description">Have a unique event in mind? WWE Superstars are available for a wide range of special occasions including charity events, hospital visits, school appearances, weddings, and more. We can create a custom package tailored to your specific needs.</p>
+                    
+                    <div class="event-features">
+                        <h4>Custom Events Include:</h4>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Charity fundraisers and galas</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hospital and school visits</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Wedding appearances</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sporting events</span>
+                        </div>
+                        <div class="event-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Virtual appearances and video messages</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#booking-form" class="btn">Inquire About Custom Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="container section" id="booking-form">
+        <div class="section-header">
+            <h2 class="section-title">Book Your WWE Superstar Event</h2>
+            <p class="section-description">Fill out the form below to start the booking process</p>
+        </div>
+
+        <div class="booking-form">
+            <form action="mailto:wwesuperstarsbooking@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-type">Event Type *</label>
+                    <select id="event-type" name="event-type" required>
+                        <option value="">Select Event Type</option>
+                        <option value="Birthday Party">Birthday Party</option>
+                        <option value="Meet & Greet">Meet & Greet</option>
+                        <option value="Grand Opening">Grand Opening</option>
+                        <option value="Corporate Event">Corporate Event</option>
+                        <option value="Other">Other (Please specify)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-date">Preferred Event Date *</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-location">Event Location *</label>
+                    <input type="text" id="event-location" name="event-location" placeholder="City, State, Country" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attendees">Expected Number of Attendees *</label>
+                    <input type="number" id="attendees" name="attendees" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferred-superstar">Preferred WWE Superstar(s)</label>
+                    <input type="text" id="preferred-superstar" name="preferred-superstar" placeholder="List your top 3 choices">
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget">Budget Range *</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select Budget Range</option>
+                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                        <option value="$10,000 - $15,000">$10,000 - $15,000</option>
+                        <option value="$15,000 - $25,000">$15,000 - $25,000</option>
+                        <option value="$25,000+">$25,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Please provide any additional details about your event that would help us understand your needs better."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Submit Booking Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container section">
+        <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How far in advance should I book a WWE Superstar for my event?</h3>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We recommend booking at least 3-6 months in advance to ensure availability. WWE Superstars have busy schedules with live events, television tapings, and other commitments. For major events or popular Superstars, even more advance notice may be necessary.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I choose which WWE Superstar appears at my event?</h3>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can request specific WWE Superstars for your event. We recommend providing multiple options as availability depends on the Superstar's schedule. Our team will work with you to secure your preferred choices whenever possible.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is included in the pricing?</h3>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our pricing includes the Superstar's appearance fee and basic coordination. Additional costs may include travel expenses, accommodation, security requirements, and any special requests. We provide a detailed quote after reviewing your specific event needs.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do WWE Superstars perform wrestling matches at private events?</h3>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>WWE Superstars do not perform wrestling matches at private events due to safety, insurance, and contractual reasons. Their appearances focus on meet and greets, photo opportunities, autograph sessions, speeches, and interactive activities appropriate for the event type.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What happens after I submit my booking request?</h3>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>After submitting your request, our team will contact you within 2-3 business days to discuss your event in more detail. We'll check Superstar availability, provide pricing information, and guide you through the booking process. Once confirmed, you'll receive a formal contract outlining all details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="container section">
+        <div class="section-header">
+            <h2 class="section-title">What Our Clients Say</h2>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Having Roman Reigns at our store grand opening was incredible! The turnout was beyond our expectations, and Roman was professional and engaging with everyone. Worth every penny!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-name">Michael Johnson</div>
+                    <div class="testimonial-title">CEO, Fitness Empire</div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Becky Lynch made my daughter's 10th birthday absolutely unforgettable. She was amazing with all the kids, took time for photos, and even participated in the birthday games. My daughter says it was the best day of her life!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-name">Sarah Williams</div>
+                    <div class="testimonial-title">Parent</div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Our corporate team-building event with Seth Rollins exceeded all expectations. His motivational speech resonated with our employees, and the interactive activities he led were both fun and meaningful. We've seen a noticeable boost in team morale since."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-name">David Chen</div>
+                    <div class="testimonial-title">HR Director, Tech Innovations Inc.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+                    <p>Your ultimate source for WWE championship information and superstar profiles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="championships.html">Championships</a></li>
+                        <li><a href="superstars.html">Superstars</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Championships</h4>
+                    <ul>
+                        <li><a href="championships.html#world">World Championships</a></li>
+                        <li><a href="championships.html#womens">Women's Championships</a></li>
+                        <li><a href="championships.html#midcard">Midcard Championships</a></li>
+                        <li><a href="championships.html#tag">Tag Team Championships</a></li>
+                        <li><a href="championships.html#nxt">NXT Championships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> wwesuperstarsbooking@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Stamford, CT, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 WWE Access Organization. All rights reserved.</p>
+                <p>This is a fan site and is not affiliated with WWE. WWE is a registered trademark of World Wrestling Entertainment, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabs = document.querySelectorAll('.event-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Hide all content sections
+                    const contents = document.querySelectorAll('.event-content');
+                    contents.forEach(content => content.classList.remove('active'));
+                    
+                    // Show the corresponding content
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    const icon = question.querySelector('i');
+                    icon.classList.toggle('fa-plus');
+                    icon.classList.toggle('fa-minus');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

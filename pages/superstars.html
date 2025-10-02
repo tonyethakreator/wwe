@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWE Superstars - WWE Access Organization</title>
+    <meta name="description" content="Complete roster of WWE Superstars from Raw, SmackDown, and NXT as of September 2025">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <style>
+        /* Additional styles specific to superstars page */
+        .filter-container {
+            margin-bottom: 2rem;
+            background-color: var(--wwe-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-option {
+            background-color: var(--wwe-dark-gray);
+            color: var(--text-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-option.active {
+            background-color: var(--primary-color);
+        }
+        
+        .filter-option:hover:not(.active) {
+            background-color: var(--border-color);
+        }
+        
+        .search-container {
+            margin-top: 1rem;
+        }
+        
+        .search-form {
+            display: flex;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .search-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background-color: var(--wwe-dark-red);
+        }
+        
+        .superstars-container {
+            margin-bottom: 3rem;
+        }
+        
+        .brand-title {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .superstar-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .champion-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .superstar-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .superstar-card:hover .superstar-image {
+            transform: scale(1.05);
+        }
+        
+        .superstar-info {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .superstar-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .superstar-stat {
+            display: flex;
+            align-items: center;
+        }
+        
+        .superstar-stat i {
+            margin-right: 0.3rem;
+            color: var(--accent-color);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--wwe-gray);
+            color: var(--text-color);
+            margin: 0 0.3rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-item.active {
+            background-color: var(--primary-color);
+        }
+        
+        .pagination-item:hover:not(.active) {
+            background-color: var(--border-color);
+        }
+        
+        .pagination-item.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        @media (max-width: 768px) {
+            .filter-options {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .filter-option {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="championships.html" class="nav-link">Championships</a></li>
+                    <li class="nav-item"><a href="superstars.html" class="nav-link active">Superstars</a></li>
+                    <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Superstars Hero -->
+    <section class="hero" style="background-image: url('../assets/images/superstars-bg.jpg'); height: 50vh;">
+        <div class="hero-content">
+            <h1 class="animate-on-scroll" data-animation="fade-in">WWE SUPERSTARS</h1>
+            <p class="animate-on-scroll" data-animation="fade-in">Complete roster of WWE Superstars as of September 2025</p>
+        </div>
+    </section>
+
+    <!-- Superstars Content -->
+    <section class="container" style="padding: 3rem 0;">
+        <!-- Filter Section -->
+        <div class="filter-container animate-on-scroll" data-animation="fade-in">
+            <h2>Filter Superstars</h2>
+            <div class="filter-options">
+                <button class="filter-option active" data-filter="all">All Superstars</button>
+                <button class="filter-option" data-filter="raw">Raw</button>
+                <button class="filter-option" data-filter="smackdown">SmackDown</button>
+                <button class="filter-option" data-filter="nxt">NXT</button>
+                <button class="filter-option" data-filter="free-agent">Legends & Part-Timers</button>
+                <button class="filter-option" data-filter="men">Men</button>
+                <button class="filter-option" data-filter="women">Women</button>
+                <button class="filter-option" data-filter="champions">Champions</button>
+            </div>
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="Search for a superstar...">
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Raw Superstars -->
+        <div class="superstars-container" id="raw-superstars">
+            <h2 class="brand-title">Raw Superstars</h2>
+            <div class="superstars-grid">
+                <!-- Seth Rollins -->
+                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+                    <div class="champion-badge">World Champion</div>
+                    <img src="../assets/images/superstars/seth-rollins.jpg" alt="Seth Rollins" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Seth Rollins</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Davenport, IA</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>225 lbs</span>
+                            </div>
+                        </div>
+                        <a href="seth-rollins.html" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Stephanie Vaquer -->
+                <div class="superstar-card" data-brand="raw" data-gender="women" data-champion="true">
+                    <div class="champion-badge">Women's World Champion</div>
+                    <img src="../assets/images/superstars/stephanie-vaquer.jpg" alt="Stephanie Vaquer" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Stephanie Vaquer</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Mexico City, Mexico</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>135 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=5" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Dominik Mysterio -->
+                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+                    <div class="champion-badge">IC Champion</div>
+                    <img src="../assets/images/superstars/dominik-mysterio.jpg" alt="Dominik Mysterio" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Dominik Mysterio</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>San Diego, CA</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>190 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=6" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Becky Lynch -->
+<!-- Jey Uso -->
+<div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+    <div class="champion-badge">Intercontinental Champion</div>
+    <img src="../assets/images/superstars/jey-uso.jpg" alt="Jey Uso" class="superstar-image">
+    <div class="superstar-info">
+        <h3 class="superstar-name">Jey Uso</h3>
+        <div class="superstar-stats">
+            <div class="superstar-stat">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>San Francisco, CA</span>
+            </div>
+            <div class="superstar-stat">
+                <i class="fas fa-weight"></i>
+                <span>251 lbs</span>
+            </div>
+        </div>
+        <a href="jey-uso.html" class="btn">View Profile</a>
+    </div>
+</div>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>                <div class="superstar-card" data-brand="raw" data-gender="women" data-champion="true">
+                    <div class="champion-badge">Women's IC Champion</div>
+                    <img src="../assets/images/superstars/becky-lynch.jpg" alt="Becky Lynch" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Becky Lynch</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Limerick, Ireland</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>135 lbs</span>
+                            </div>
+                        </div>
+                        <a href="becky-lynch.html" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Finn Bálor -->
+                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+                    <div class="champion-badge">Tag Champion</div>
+                    <img src="../assets/images/superstars/finn-balor.jpg" alt="Finn Bálor" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Finn Bálor</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bray, Ireland</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>190 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=11" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- JD McDonagh -->
+                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+                    <div class="champion-badge">Tag Champion</div>
+                    <img src="../assets/images/superstars/jd-mcdonagh.jpg" alt="JD McDonagh" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">JD McDonagh</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dublin, Ireland</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>205 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=12" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Gunther -->
+                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="false">
+                    <img src="../assets/images/superstars/gunther.jpg" alt="Gunther" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Gunther</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Vienna, Austria</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>275 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=13" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Rhea Ripley -->
+                <div class="superstar-card" data-brand="raw" data-gender="women" data-champion="false">
+                    <img src="../assets/images/superstars/rhea-ripley.jpg" alt="Rhea Ripley" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Rhea Ripley</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Adelaide, Australia</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>137 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=14" class="btn">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SmackDown Superstars -->
+        <div class="superstars-container" id="smackdown-superstars">
+            <h2 class="brand-title">SmackDown Superstars</h2>
+            <div class="superstars-grid">
+                <!-- Cody Rhodes -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="true">
+                    <div class="champion-badge">WWE Champion</div>
+                    <img src="../assets/images/superstars/cody-rhodes.jpg" alt="Cody Rhodes" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Cody Rhodes</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Atlanta, GA</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>220 lbs</span>
+                            </div>
+                        </div>
+                        <a href="cody-rhodes.html" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Tiffany Stratton -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="women" data-champion="true">
+                    <div class="champion-badge">Women's Champion</div>
+                    <img src="../assets/images/superstars/tiffany-stratton.jpg" alt="Tiffany Stratton" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Tiffany Stratton</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Prior Lake, MN</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>125 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=4" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Sami Zayn -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="true">
+                    <div class="champion-badge">US Champion</div>
+                    <img src="../assets/images/superstars/sami-zayn.jpg" alt="Sami Zayn" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Sami Zayn</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Montreal, Quebec</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>212 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=15" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Giulia -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="women" data-champion="true">
+                    <div class="champion-badge">Women's US Champion</div>
+                    <img src="../assets/images/superstars/giulia.jpg" alt="Giulia" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Giulia</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Milan, Italy</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>128 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=7" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Dexter Lumis -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="true">
+                    <div class="champion-badge">Tag Champion</div>
+                    <img src="../assets/images/superstars/dexter-lumis.jpg" alt="Dexter Lumis" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Dexter Lumis</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Jacksonville, FL</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>230 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=16" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Joe Gacy -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="true">
+                    <div class="champion-badge">Tag Champion</div>
+                    <img src="../assets/images/superstars/joe-gacy.jpg" alt="Joe Gacy" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Joe Gacy</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Philadelphia, PA</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>240 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=17" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Roman Reigns -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="false">
+                    <img src="../assets/images/superstars/roman-reigns.jpg" alt="Roman Reigns" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Roman Reigns</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Pensacola, FL</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>265 lbs</span>
+                            </div>
+                        </div>
+                        <a href="roman-reigns.html" class="btn">View Profile</a>
+                    </div>
+<!-- Jimmy Uso -->
+<div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="false">
+    <img src="../assets/images/superstars/jimmy-uso.jpg" alt="Jimmy Uso" class="superstar-image">
+    <div class="superstar-info">
+        <h3 class="superstar-name">Jimmy Uso</h3>
+        <div class="superstar-stats">
+            <div class="superstar-stat">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>San Francisco, CA</span>
+            </div>
+            <div class="superstar-stat">
+                <i class="fas fa-weight"></i>
+                <span>251 lbs</span>
+            </div>
+        </div>
+        <a href="jimmy-uso.html" class="btn">View Profile</a>
+    </div>
+</div>
+
+<!-- Solo Sikoa -->
+<div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="false">
+    <img src="../assets/images/superstars/solo-sikoa.jpg" alt="Solo Sikoa" class="superstar-image">
+    <div class="superstar-info">
+        <h3 class="superstar-name">Solo Sikoa</h3>
+        <div class="superstar-stats">
+            <div class="superstar-stat">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>San Francisco, CA</span>
+            </div>
+            <div class="superstar-stat">
+                <i class="fas fa-weight"></i>
+                <span>240 lbs</span>
+            </div>
+        </div>
+        <a href="solo-sikoa.html" class="btn">View Profile</a>
+    </div>
+</div>
+
+<!-- Jacob Fatu -->
+<div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="false">
+    <img src="../assets/images/superstars/jacob-fatu.jpg" alt="Jacob Fatu" class="superstar-image">
+    <div class="superstar-info">
+        <h3 class="superstar-name">Jacob Fatu</h3>
+        <div class="superstar-stats">
+            <div class="superstar-stat">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>San Francisco, CA</span>
+            </div>
+            <div class="superstar-stat">
+                <i class="fas fa-weight"></i>
+                <span>300 lbs</span>
+            </div>
+        </div>
+        <a href="jacob-fatu.html" class="btn">View Profile</a>
+    </div>
+</div>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>                </div>
+
+                <!-- Jade Cargill -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="women" data-champion="false">
+                    <img src="../assets/images/superstars/jade-cargill.jpg" alt="Jade Cargill" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Jade Cargill</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Gifford, FL</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>160 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=18" class="btn">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NXT Superstars -->
+        <div class="superstars-container" id="nxt-superstars">
+            <h2 class="brand-title">NXT Superstars</h2>
+            <div class="superstars-grid">
+                <!-- Oba Femi -->
+                <div class="superstar-card" data-brand="nxt" data-gender="men" data-champion="true">
+                    <div class="champion-badge">NXT Champion</div>
+                    <img src="../assets/images/superstars/oba-femi.jpg" alt="Oba Femi" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Oba Femi</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Lagos, Nigeria</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>275 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=19" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Jacy Jayne -->
+                <div class="superstar-card" data-brand="nxt" data-gender="women" data-champion="true">
+                    <div class="champion-badge">NXT Women's Champion</div>
+                    <img src="../assets/images/superstars/jacy-jayne.jpg" alt="Jacy Jayne" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Jacy Jayne</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Orlando, FL</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>125 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=20" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Ethan Page -->
+                <div class="superstar-card" data-brand="nxt" data-gender="men" data-champion="true">
+                    <div class="champion-badge">NA Champion</div>
+                    <img src="../assets/images/superstars/ethan-page.jpg" alt="Ethan Page" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Ethan Page</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hamilton, Ontario</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>235 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=21" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Sol Ruca -->
+                <div class="superstar-card" data-brand="nxt" data-gender="women" data-champion="true">
+                    <div class="champion-badge">NA & Speed Champion</div>
+                    <img src="../assets/images/superstars/sol-ruca.jpg" alt="Sol Ruca" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Sol Ruca</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Huntington Beach, CA</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>130 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=22" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Trick Williams -->
+                <div class="superstar-card" data-brand="nxt" data-gender="men" data-champion="false">
+                    <img src="../assets/images/superstars/trick-williams.jpg" alt="Trick Williams" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Trick Williams</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Washington, DC</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>240 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=23" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Roxanne Perez -->
+                <div class="superstar-card" data-brand="nxt" data-gender="women" data-champion="false">
+                    <img src="../assets/images/superstars/roxanne-perez.jpg" alt="Roxanne Perez" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Roxanne Perez</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Laredo, TX</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>115 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=24" class="btn">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Top Superstars -->
+        <div class="superstars-container" id="top-superstars">
+            <h2 class="brand-title">Top WWE Legends & Part-Timers</h2>
+            <div class="superstars-grid">
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="false">
+                    <img src="../assets/images/superstars/roman-reigns.jpg" alt="Roman Reigns" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Roman Reigns</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Pensacola, FL</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>265 lbs</span>
+                            </div>
+                        </div>
+                        <a href="roman-reigns.html" class="btn">View Profile</a>
+                    </div>
+                </div>
+                
+                <div class="superstar-card" data-brand="free-agent" data-gender="men" data-champion="false">
+                    <img src="../assets/images/superstars/john-cena.jpg" alt="John Cena" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">John Cena</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>West Newbury, MA</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>251 lbs</span>
+                            </div>
+                        </div>
+                        <a href="john-cena.html" class="btn">View Profile</a>
+                    </div>
+                </div>
+                
+                <div class="superstar-card" data-brand="free-agent" data-gender="men" data-champion="false">
+                    <img src="../assets/images/superstars/brock-lesnar.jpg" alt="Brock Lesnar" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Brock Lesnar</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Webster, SD</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>286 lbs</span>
+                            </div>
+                        </div>
+                        <a href="brock-lesnar.html" class="btn">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <div class="pagination-item">
+                <i class="fas fa-angle-double-left"></i>
+            </div>
+            <div class="pagination-item">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <div class="pagination-item active">1</div>
+            <div class="pagination-item">2</div>
+            <div class="pagination-item">3</div>
+            <div class="pagination-item">4</div>
+            <div class="pagination-item">
+                <i class="fas fa-angle-right"></i>
+            </div>
+            <div class="pagination-item">
+                <i class="fas fa-angle-double-right"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+                    <p>Your ultimate source for WWE championship information and superstar profiles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="championships.html">Championships</a></li>
+                        <li><a href="superstars.html">Superstars</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Championships</h4>
+                    <ul>
+                        <li><a href="championships.html#world">World Championships</a></li>
+                        <li><a href="championships.html#womens">Women's Championships</a></li>
+                        <li><a href="championships.html#midcard">Midcard Championships</a></li>
+                        <li><a href="championships.html#tag">Tag Team Championships</a></li>
+                        <li><a href="championships.html#nxt">NXT Championships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@wweaccessorg.com</li>
+                        
+                        <li><i class="fas fa-map-marker-alt"></i> Stamford, CT, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 WWE Access Organization. All rights reserved.</p>
+                <p>This is a fan site and is not affiliated with WWE. WWE is a registered trademark of World Wrestling Entertainment, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filterOptions = document.querySelectorAll('.filter-option');
+            const superstarCards = document.querySelectorAll('.superstar-card');
+            
+            filterOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove active class from all options
+                    filterOptions.forEach(opt => opt.classList.remove('active'));
+                    
+                    // Add active class to clicked option
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    
+                    // Show/hide superstars based on filter
+                    superstarCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else if (filter === 'champions') {
+                            if (card.dataset.champion === 'true') {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        } else if (filter === 'men' || filter === 'women') {
+                            if (card.dataset.gender === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        } else {
+                            if (card.dataset.brand === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            const searchForm = document.querySelector('.search-form');
+            const searchInput = document.querySelector('.search-input');
+            
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                
+                if (searchTerm.length < 2) {
+                    alert('Please enter at least 2 characters to search.');
+                    return;
+                }
+                
+                // Reset filter options
+                filterOptions.forEach(opt => opt.classList.remove('active'));
+                document.querySelector('.filter-option[data-filter="all"]').classList.add('active');
+                
+                // Show/hide superstars based on search
+                let resultsFound = false;
+                superstarCards.forEach(card => {
+                    const superstarName = card.querySelector('.superstar-name').textContent.toLowerCase();
+                    
+                    if (superstarName.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        resultsFound = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                if (!resultsFound) {
+                    alert('No superstars found matching your search term.');
+                    // Reset display
+                    superstarCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                }
+            });
+            
+            // Pagination functionality (for demonstration purposes)
+            const paginationItems = document.querySelectorAll('.pagination-item');
+            
+            paginationItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    if (!this.classList.contains('active') && !this.classList.contains('disabled')) {
+                        paginationItems.forEach(item => item.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // In a real implementation, this would load the next page of superstars
+                        // For now, we'll just scroll to the top of the superstars section
+                        document.querySelector('.filter-container').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

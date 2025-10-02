@@ -1,0 +1,11 @@
+1400-                </div>
+1401-                <div class="footer-links">
+1402-                    <h4>Contact Us</h4>
+1403-                    <ul>
+1404-                        <li><i class="fas fa-envelope"></i> wwesuperstarsbooking@gmail.com</li>
+1405:                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+1406-                        <li><i class="fas fa-map-marker-alt"></i> Stamford, CT, USA</li>
+1407-                    </ul>
+1408-                </div>
+1409-            </div>
+1410-            <div class="copyright">

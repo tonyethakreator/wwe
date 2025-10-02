@@ -1,0 +1,1 @@
+{'role': 'user', 'content': "<tool_result> <browser-navigate-to> ToolResult(success=False, output='Failed to parse response JSON:  Expecting value: line 1 column 1 (char 0)') </browser-navigate-to> </tool_result>"}

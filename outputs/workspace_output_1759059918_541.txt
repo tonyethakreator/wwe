@@ -1,0 +1,12 @@
+409:                    <label for="event-type">Event Type *</label>
+410:                    <select id="event-type" name="event-type" required>
+411-                        <option value="">Select Event Type</option>
+412-                        <option value="Birthday Party">Birthday Party</option>
+413-                        <option value="Meet & Greet">Meet & Greet</option>
+414-                        <option value="Grand Opening">Grand Opening</option>
+415-                        <option value="Corporate Event">Corporate Event</option>
+416-                        <option value="Other">Other (Please specify)</option>
+417-                    </select>
+418-                </div>
+419-                
+420-                <div class="form-group">

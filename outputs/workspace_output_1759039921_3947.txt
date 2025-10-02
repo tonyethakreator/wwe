@@ -1,0 +1,51 @@
+        <!-- SmackDown Superstars -->
+        <div class="superstars-container" id="smackdown-superstars">
+            <h2 class="brand-title">SmackDown Superstars</h2>
+            <div class="superstars-grid">
+                <!-- Cody Rhodes -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="true">
+                    <div class="champion-badge">WWE Champion</div>
+                    <img src="../assets/images/superstars/cody-rhodes.jpg" alt="Cody Rhodes" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Cody Rhodes</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Atlanta, GA</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>220 lbs</span>
+                            </div>
+                        </div>
+                        <a href="cody-rhodes.html" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Tiffany Stratton -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="women" data-champion="true">
+                    <div class="champion-badge">Women's Champion</div>
+                    <img src="../assets/images/superstars/tiffany-stratton.jpg" alt="Tiffany Stratton" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Tiffany Stratton</h3>
+                        <div class="superstar-stats">
+                            <div class="superstar-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Prior Lake, MN</span>
+                            </div>
+                            <div class="superstar-stat">
+                                <i class="fas fa-weight"></i>
+                                <span>125 lbs</span>
+                            </div>
+                        </div>
+                        <a href="superstar.html?id=4" class="btn">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Sami Zayn -->
+                <div class="superstar-card" data-brand="smackdown" data-gender="men" data-champion="true">
+                    <div class="champion-badge">US Champion</div>
+                    <img src="../assets/images/superstars/sami-zayn.jpg" alt="Sami Zayn" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Sami Zayn</h3>
+                        <div class="superstar-stats">

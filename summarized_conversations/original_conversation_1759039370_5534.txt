@@ -1,0 +1,1 @@
+{'role': 'assistant', 'content': 'Let\'s search specifically for current WWE champions as of September 2025:\n\n<function_calls>\n<web-search query="current WWE champions September 2025" num_results="10">\n</web-search>\n</function_calls>'}

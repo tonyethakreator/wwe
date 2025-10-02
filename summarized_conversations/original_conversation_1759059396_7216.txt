@@ -1,0 +1,1 @@
+{'role': 'assistant', 'content': 'Let me check the tools directory to understand what maintenance tools we have:\n\n<function_calls>\n<execute-command>\nls -la src/tools/\n</execute-command>\n</function_calls>'}

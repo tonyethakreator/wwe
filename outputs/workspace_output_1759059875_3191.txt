@@ -1,0 +1,20 @@
+--
+596:                </div>
+597-                <div class="footer-links">
+598-                    <h4>Contact Us</h4>
+599-                    <ul>
+600-                        <li><i class="fas fa-envelope"></i> wwesuperstarsbooking@gmail.com</li>
+601-                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+--
+604:                </div>
+605:            </div>
+606-            <div class="copyright">
+607-                <p>&copy; 2025 WWE Access Organization. All rights reserved.</p>
+608-                <p>This is a fan site and is not affiliated with WWE. WWE is a registered trademark of World Wrestling Entertainment, Inc.</p>
+609:            </div>
+610:        </div>
+611-    </footer>
+612-
+613-    <script src="../assets/js/main.js"></script>
+614-    <script>
+615-        document.addEventListener('DOMContentLoaded', function() {

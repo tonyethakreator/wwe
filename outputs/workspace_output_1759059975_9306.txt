@@ -1,0 +1,23 @@
+225-                    </div>
+226-                </div>
+227-                
+228-                <div class="contact-method">
+229-                    <div class="contact-icon">
+230:                        <i class="fas fa-phone"></i>
+231-                    </div>
+232-                    <div class="contact-details">
+233-                        <h3>Phone</h3>
+234-                        <p>(123) 456-7890</p>
+235-                        <p>Monday to Friday, 9am - 5pm EST</p>
+--
+411-                </div>
+412-                <div class="footer-links">
+413-                    <h4>Contact Us</h4>
+414-                    <ul>
+415-                        <li><i class="fas fa-envelope"></i> wwesuperstarsbooking@gmail.com</li>
+416:                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+417-                        <li><i class="fas fa-map-marker-alt"></i> Stamford, CT, USA</li>
+418-                    </ul>
+419-                </div>
+420-            </div>
+421-            <div class="copyright">

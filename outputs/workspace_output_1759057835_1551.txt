@@ -1,0 +1,21 @@
+                        <h3>Established: 1963</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/cody-rhodes.jpg" alt="Cody Rhodes" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Cody Rhodes</h3>
+                            <p class="reign-info">50+ days • 2nd reign</p>
+                            <p>Won at SummerSlam 2025 (August 3, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Championship is the most prestigious title in WWE and one of the most coveted championships in professional wrestling history. It represents the pinnacle of achievement in WWE and is contested exclusively on the SmackDown brand.</p>
+                    <p>The current design features a large WWE logo in the center with customizable side plates for each champion.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/roman-reigns.jpg" alt="Roman Reigns">

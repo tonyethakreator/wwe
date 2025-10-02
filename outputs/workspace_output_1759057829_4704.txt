@@ -1,0 +1,13 @@
+        <div class="championship-tabs">
+            <div class="championship-tab active" data-target="world">World Championships</div>
+            <div class="championship-tab" data-target="womens">Women's Championships</div>
+            <div class="championship-tab" data-target="midcard">Midcard Championships</div>
+            <div class="championship-tab" data-target="tag">Tag Team Championships</div>
+            <div class="championship-tab" data-target="nxt">NXT Championships</div>
+        </div>
+
+        <!-- World Championships -->
+        <div class="championship-content active" data-id="world">
+            <h2 class="section-title">World Championships</h2>
+            
+            <!-- WWE Championship -->

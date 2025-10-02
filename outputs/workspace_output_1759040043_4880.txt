@@ -1,0 +1,3 @@
+280:                <!-- Dominik Mysterio -->
+283:                    <img src="../assets/images/superstars/dominik-mysterio.jpg" alt="Dominik Mysterio" class="superstar-image">
+285:                        <h3 class="superstar-name">Dominik Mysterio</h3>
