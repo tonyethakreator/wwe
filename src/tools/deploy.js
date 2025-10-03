@@ -20,12 +20,23 @@ if (!fs.existsSync(distDir)) {
 try {
   console.log('Copying files from src to dist...');
   
-  // Copy index.html
-  fs.copyFileSync(
-    path.join(__dirname, '../index.html'),
-    path.join(distDir, 'index.html')
-  );
-  console.log('Copied index.html');
+  // Copy index.html - try common candidate locations (src/ and project root)
+  const indexCandidates = [
+    path.join(__dirname, '../index.html'), // src/index.html
+    path.join(__dirname, '../../index.html') // project root index.html
+  ];
+  let indexSrc = null;
+  for (const cand of indexCandidates) {
+    if (fs.existsSync(cand)) {
+      indexSrc = cand;
+      break;
+    }
+  }
+  if (!indexSrc) {
+    throw new Error(`Could not find index.html in any of the expected locations: ${indexCandidates.join(', ')}`);
+  }
+  fs.copyFileSync(indexSrc, path.join(distDir, 'index.html'));
+  console.log(`Copied index.html from ${indexSrc}`);
   
   // Copy pages directory
   const pagesDir = path.join(distDir, 'pages');
