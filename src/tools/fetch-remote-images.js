@@ -51,7 +51,7 @@ async function main() {
   }
 
   const files = walkDir(distDir, ['.html', '.js', '.css']);
-  const urlRegex = /(https?:\\/\\/[^"'\)\s>]+?\.(?:png|jpe?g|svg|webp))/gi;
+  const urlRegex = new RegExp('(https?:\\/\\/[^"\'\\)\\s>]+?\\.(?:png|jpe?g|svg|webp))', 'gi');
 
   const found = new Map();
   files.forEach(file => {
