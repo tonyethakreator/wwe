@@ -22,7 +22,7 @@ try {
   
   // Copy index.html - try common candidate locations (src/ and project root)
   const indexCandidates = [
-    path.join(__dirname, '../index.html'), // src/index.html
+    path.join(__dirname, '../index.html'), // index.html
     path.join(__dirname, '../../index.html') // project root index.html
   ];
   let indexSrc = null;
