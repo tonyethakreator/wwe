@@ -127,28 +127,28 @@ const superstarData = [
         name: "Cody Rhodes",
         nickname: "The American Nightmare",
         brand: "SmackDown",
-        image: "../assets/images/superstars/cody-rhodes.jpg"
+        image: "../assets/images/logo.svg"
     },
     {
         id: 2,
         name: "Seth Rollins",
         nickname: "The Visionary",
         brand: "Raw",
-        image: "../assets/images/superstars/seth-rollins.jpg"
+        image: "../assets/images/logo.svg"
     },
     {
         id: 3,
         name: "Becky Lynch",
         nickname: "The Man",
         brand: "Raw",
-        image: "../assets/images/superstars/becky-lynch.jpg"
+        image: "../assets/images/logo.svg"
     },
     {
         id: 4,
         name: "Tiffany Stratton",
         nickname: "The Center of the Universe",
         brand: "SmackDown",
-        image: "../assets/images/superstars/tiffany-stratton.jpg"
+        image: "../assets/images/logo.svg"
     }
 ];
 

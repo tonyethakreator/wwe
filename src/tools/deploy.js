@@ -151,6 +151,58 @@ try {
   });
   
   console.log('All files copied successfully!');
+
+  // Fetch remote images referenced in built files and rewrite references to local copies
+  try {
+    const fetchScript = path.join(__dirname, 'fetch-remote-images.js');
+    if (fs.existsSync(fetchScript)) {
+      console.log('Downloading remote images referenced in files...');
+      execSync(`node "${fetchScript}" "${distDir}"`, { stdio: 'inherit' });
+    }
+  } catch (err) {
+    console.warn('Warning: fetch-remote-images failed:', err.message);
+  }
+
+  // Post-processing: replace references to missing raster images with SVG fallbacks
+  // This prevents 404s when JPG/PNG images referenced in HTML/JS are not present in the repo.
+  const walkDir = (dir, exts = []) => {
+    let results = [];
+    const list = fs.readdirSync(dir);
+    list.forEach(file => {
+      const full = path.join(dir, file);
+      const stat = fs.statSync(full);
+      if (stat && stat.isDirectory()) {
+        results = results.concat(walkDir(full, exts));
+      } else {
+        if (exts.length === 0 || exts.includes(path.extname(full))) {
+          results.push(full);
+        }
+      }
+    });
+    return results;
+  };
+
+  const filesToPatch = walkDir(distDir, ['.html', '.js', '.css']);
+  filesToPatch.forEach(file => {
+    let content = fs.readFileSync(file, 'utf8');
+    let newContent = content;
+
+    // Replace favicon.png with favicon.svg when present
+    newContent = newContent.replace(/assets\/images\/favicon\.(png|ico)/g, 'assets/images/favicon.svg');
+
+    // Replace hero-bg.jpg/png with hero-bg.svg
+    newContent = newContent.replace(/assets\/images\/hero-bg\.(jpg|png|jpeg)/g, 'assets/images/hero-bg.svg');
+
+    // Replace references to images under superstars/ or champions/ (jpg/png) with logo.svg fallback
+    newContent = newContent.replace(/assets\/images\/(?:superstars|champions)\/[^\)\"'\s]+\.(jpg|png|jpeg)/g, 'assets/images/logo.svg');
+
+    // If content changed, write back
+    if (newContent !== content) {
+      fs.writeFileSync(file, newContent, 'utf8');
+      console.log(`Patched image references in ${path.relative(distDir, file)}`);
+    }
+  });
+
   console.log('Website is ready for deployment in the dist directory.');
   console.log('To deploy to production, use the deploy tool with:');
   console.log('  npm run deploy');
