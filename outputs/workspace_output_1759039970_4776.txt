@@ -1,5 +1,0 @@
-524:                <!-- Roman Reigns -->
-526:                    <img src="../assets/images/superstars/roman-reigns.jpg" alt="Roman Reigns" class="superstar-image">
-528:                        <h3 class="superstar-name">Roman Reigns</h3>
-693:                    <img src="../assets/images/superstars/roman-reigns.jpg" alt="Roman Reigns" class="superstar-image">
-695:                        <h3 class="superstar-name">Roman Reigns</h3>

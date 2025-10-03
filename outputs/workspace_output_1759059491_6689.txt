@@ -1,4 +1,0 @@
-230:                        <i class="fas fa-phone"></i>
-278:                        <label for="phone">Phone Number</label>
-279:                        <input type="tel" id="phone" name="phone">
-416:                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>

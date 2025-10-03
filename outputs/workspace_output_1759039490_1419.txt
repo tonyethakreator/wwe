@@ -1,5 +1,0 @@
-total 16
-drwxr-xr-x 2 root root    54 Sep 27 02:18 .
-drwxr-xr-x 5 root root    57 Sep 27 02:17 ..
--rw-r--r-- 1 root root  1144 Sep 27 02:17 colors.css
--rw-r--r-- 1 root root 11145 Sep 27 02:18 styles.css

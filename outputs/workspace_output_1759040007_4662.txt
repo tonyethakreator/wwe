@@ -1,2 +1,0 @@
-236:        <!-- Raw Superstars -->
-238:            <h2 class="brand-title">Raw Superstars</h2>

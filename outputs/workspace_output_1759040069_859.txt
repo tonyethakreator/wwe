@@ -1,4 +1,0 @@
--rw-r--r-- 1 root root 16534 Sep 28 06:09 pages/jacob-fatu.html
--rw-r--r-- 1 root root 16544 Sep 28 06:07 pages/jey-uso.html
--rw-r--r-- 1 root root 16232 Sep 28 06:06 pages/jimmy-uso.html
--rw-r--r-- 1 root root 15967 Sep 28 06:08 pages/solo-sikoa.html
