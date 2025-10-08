@@ -1,0 +1,5 @@
+Created hero background: assets/images/hero-bg.jpg
+Created championship background: assets/images/championships-bg.jpg
+Created superstars background: assets/images/superstars-bg.jpg
+
+Created 3 website backgrounds!

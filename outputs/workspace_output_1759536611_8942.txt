@@ -1,0 +1,34 @@
+Created image: assets/images/superstars/cody-rhodes.jpg
+Created image: assets/images/superstars/seth-rollins.jpg
+Created image: assets/images/superstars/becky-lynch.jpg
+Created image: assets/images/superstars/roman-reigns.jpg
+Created image: assets/images/superstars/john-cena.jpg
+Created image: assets/images/superstars/brock-lesnar.jpg
+Created image: assets/images/superstars/jimmy-uso.jpg
+Created image: assets/images/superstars/jey-uso.jpg
+Created image: assets/images/superstars/solo-sikoa.jpg
+Created image: assets/images/superstars/jacob-fatu.jpg
+Created image: assets/images/superstars/la-knight.jpg
+Created image: assets/images/superstars/jade-cargill.jpg
+Created image: assets/images/superstars/trick-williams.jpg
+Created image: assets/images/superstars/giulia.jpg
+Created image: assets/images/superstars/kelani-jordan.jpg
+Created image: assets/images/superstars/jacy-jayne.jpg
+Created image: assets/images/superstars/thea-hail.jpg
+Created image: assets/images/superstars/gunther.jpg
+Created image: assets/images/superstars/sami-zayn.jpg
+Created image: assets/images/superstars/oba-femi.jpg
+Created image: assets/images/superstars/chase-u.jpg
+Created image: assets/images/superstars/andre-chase.jpg
+Created image: assets/images/superstars/duke-hudson.jpg
+Created image: assets/images/superstars/dragon-lee.jpg
+Created image: assets/images/superstars/roxanne-perez.jpg
+Created image: assets/images/superstars/lyra-valkyria.jpg
+Created image: assets/images/superstars/isla-dawn.jpg
+Created image: assets/images/superstars/alba-fyre.jpg
+Created image: assets/images/superstars/lash-legend.jpg
+Created image: assets/images/superstars/jakara-jackson.jpg
+Created image: assets/images/superstars/sol-ruca.jpg
+Created image: assets/images/superstars/fallon-henley.jpg
+
+Created 32 superstar images!

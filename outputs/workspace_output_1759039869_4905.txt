@@ -1,0 +1,10 @@
+85:        .superstar-card {
+107:        .superstar-card:hover .superstar-image {
+241:                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+261:                <div class="superstar-card" data-brand="raw" data-gender="women" data-champion="true">
+281:                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+301:                <div class="superstar-card" data-brand="raw" data-gender="women" data-champion="true">
+321:                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+341:                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+361:                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="false">
+380:                <div class="superstar-card" data-brand="raw" data-gender="women" data-champion="false">

@@ -1,0 +1,21 @@
+289:                            <span>Photo opportunities with family members</span>
+290-                        </div>
+291-                        <div class="event-feature">
+292-                            <i class="fas fa-check-circle"></i>
+293-                            <span>Social media promotion before the event</span>
+294-                        </div>
+295-                    </div>
+296-                    
+297-                    <a href="#booking-form" class="btn">Book This Event</a>
+298-                </div>
+299-            </div>
+300-        </div>
+301-
+302-        <!-- Corporate Events -->
+303-        <div class="event-content" id="corporate">
+304-            <div class="event-card">
+305-                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+306-                <div class="event-info">
+307-                    <h3 class="event-title">Corporate Event with WWE Superstar</h3>
+308-                    <p class="event-price">Starting at $15,000</p>
+309-                    <p class="event-description">Elevate your corporate event with a WWE Superstar appearance. Whether it's a company party, team-building event, or motivational speaking engagement, WWE Superstars can bring energy, inspiration, and star power to your corporate function.</p>

@@ -1,0 +1,12 @@
+Created championship belt: assets/images/graphics/wwe-championship-belt.png
+Created championship belt: assets/images/graphics/world-heavyweight-championship-belt.png
+Created championship belt: assets/images/graphics/intercontinental-championship-belt.png
+Created championship belt: assets/images/graphics/united-states-championship-belt.png
+Created championship belt: assets/images/graphics/women's-intercontinental-championship-belt.png
+Created championship belt: assets/images/graphics/nxt-championship-belt.png
+Created championship belt: assets/images/graphics/nxt-women's-championship-belt.png
+Created championship belt: assets/images/graphics/nxt-north-american-championship-belt.png
+Created WWE logo: assets/images/graphics/wwe-logo.png
+Created trophy icon: assets/images/graphics/trophy.png
+
+Created 10 graphics!

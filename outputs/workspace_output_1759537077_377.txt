@@ -1,0 +1,11 @@
+</head>
+<body>
+    <h1>WWE Access Organization - Image Test Page</h1>
+    <p>This page tests all the images we've created for the website.</p>
+    
+    <h2>Superstar Images</h2>
+    <div class="image-grid">
+        <div class="image-item">
+            <img src="assets/images/superstars/cody-rhodes.jpg" alt="Cody Rhodes">
+            <div class="image-title">Cody Rhodes</div>
+        </div>

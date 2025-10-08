@@ -1,0 +1,1 @@
+204:    <section class="hero" style="background-image: url('../assets/images/superstars-bg.jpg'); height: 50vh;">

@@ -1,0 +1,11 @@
+1179-                        </ul>
+1180-                    </div>
+1181-                </div>
+1182-            </div>
+1183-            
+1184:            <!-- NXT Tag Team Championship -->
+1185-            <div class="championship-detail" id="nxt-tag-team-championship">
+1186-                <div class="championship-image">
+1187-                    <img src="https://www.wwe.com/f/styles/wwe_16_9_l/public/all/2022/04/20220402_NXT_StandDeliver_Results_MSK--a9d9e6a6b3c6d5a7e2d1e0b8b3c4d9e8.jpg" alt="NXT Tag Team Championship">
+1188-                    <div class="championship-image-overlay">
+1189-                        <h3>Established: 2013</h3>

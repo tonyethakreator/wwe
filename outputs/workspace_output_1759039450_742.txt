@@ -1,0 +1,11 @@
+total 32
+drwxr-xr-x 1 root root    65 Sep 28 06:02 .
+drwxr-xr-x 1 root root   122 Sep 28 06:00 ..
+-rw-r--r-- 1 root root    29 Sep 27 03:25 .created
+-rw-r--r-- 1 root root  3940 Sep 27 02:28 README.md
+drwxr-xr-x 6 root root   108 Sep 27 02:25 backend
+drwxr-xr-x 1 root root    57 Sep 28 06:04 outputs
+-rw-r--r-- 1 root root  1089 Sep 27 02:49 package.json
+drwxr-xr-x 6 root root   192 Sep 27 03:11 src
+drwxr-xr-x 2 root root 12288 Sep 28 06:04 summarized_conversations
+-rw-r--r-- 1 root root  1553 Sep 27 02:30 todo.md

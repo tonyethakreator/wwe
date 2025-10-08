@@ -1,0 +1,11 @@
+331:                            <span>Autograph signing session</span>
+332-                        </div>
+333-                        <div class="event-feature">
+334-                            <i class="fas fa-check-circle"></i>
+335-                            <span>Q&A session tailored to your company's values</span>
+336-                        </div>
+337-                    </div>
+338-                    
+339-                    <a href="#booking-form" class="btn">Book This Event</a>
+340-                </div>
+341-            </div>

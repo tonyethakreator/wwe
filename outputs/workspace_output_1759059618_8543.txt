@@ -1,0 +1,16 @@
+1056-                    <div class="championship-holder">
+1057-                        <img src="../assets/images/superstars/jacy-jayne.jpg" alt="Jacy Jayne" class="holder-image">
+1058-                        <div class="holder-info">
+1059-                            <h3>Jacy Jayne</h3>
+1060-                            <p class="reign-info">120+ days • 1st reign</p>
+1061-                            <p>Won at NXT Battleground 2025 (May 25, 2025)</p>
+1062-                        </div>
+1063-                    </div>
+1064:                    <p>The NXT Women's Championship is the top women's championship in WWE's NXT brand. It represents the pinnacle of achievement for female superstars in WWE's developmental territory and third brand.</p>
+1065-                    <p>The current design features a large gold centerpiece with white leather strap, prominently displaying the NXT logo. The championship has been held by many superstars who went on to become major stars on the main roster.</p>
+1066-                    
+1067-                    <div class="championship-history">
+1068-                        <h3 class="history-title">Recent Champions</h3>
+1069-                        <div class="previous-holders">
+1070-                            <div class="previous-holder">
+1071-                                <img src="../assets/images/superstars/roxanne-perez.jpg" alt="Roxanne Perez">

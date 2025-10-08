@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWE Championships - WWE Access Organization</title>
+    <meta name="description" content="Complete list of current WWE champions across all brands as of September 2025">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <style>
+        /* Additional styles specific to championships page */
+        .championship-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .championship-tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .championship-tab.active {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        
+        .championship-tab:hover:not(.active) {
+            background-color: var(--wwe-gray);
+        }
+        
+        .championship-content {
+            display: none;
+        }
+        
+        .championship-content.active {
+            display: block;
+        }
+        
+        .championship-detail {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background-color: var(--wwe-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .championship-image-container {
+            position: relative;
+        }
+        
+        .championship-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .championship-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1rem;
+            color: var(--text-color);
+        }
+        
+        .championship-info {
+            padding: 2rem;
+        }
+        
+        .championship-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .championship-holder {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .holder-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            margin-right: 1rem;
+        }
+        
+        .holder-info h3 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .reign-info {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .championship-history {
+            margin-top: 2rem;
+        }
+        
+        .history-title {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .previous-holders {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .previous-holder {
+            display: flex;
+            align-items: center;
+            background-color: var(--wwe-dark-gray);
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .previous-holder img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 992px) {
+            .championship-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .championship-image-container {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .championship-tab {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="championships.html" class="nav-link active">Championships</a></li>
+                    <li class="nav-item"><a href="superstars.html" class="nav-link">Superstars</a></li>
+                    <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Championships Hero -->
+    <section class="hero" style="background-image: url('../assets/images/championships-bg.jpg'); height: 50vh;">
+        <div class="hero-content">
+            <h1 class="animate-on-scroll" data-animation="fade-in">WWE CHAMPIONSHIPS</h1>
+            <p class="animate-on-scroll" data-animation="fade-in">Current champions across all WWE brands as of September 2025</p>
+        </div>
+    </section>
+
+    <!-- Championships Content -->
+    <section class="container" style="padding: 3rem 0;">
+        <div class="championship-tabs">
+            <div class="championship-tab active" data-target="world">World Championships</div>
+            <div class="championship-tab" data-target="womens">Women's Championships</div>
+            <div class="championship-tab" data-target="midcard">Midcard Championships</div>
+            <div class="championship-tab" data-target="tag">Tag Team Championships</div>
+            <div class="championship-tab" data-target="nxt">NXT Championships</div>
+        </div>
+
+        <!-- World Championships -->
+        <div class="championship-content active" data-id="world">
+            <h2 class="section-title">World Championships</h2>
+            
+            <!-- WWE Championship -->
+            <div class="championship-detail world-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/wwe-championship-full.jpg" alt="WWE Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 1963</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/cody-rhodes.jpg" alt="Cody Rhodes" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Cody Rhodes</h3>
+                            <p class="reign-info">50+ days • 2nd reign</p>
+                            <p>Won at SummerSlam 2025 (August 3, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Championship is the most prestigious title in WWE and one of the most coveted championships in professional wrestling history. It represents the pinnacle of achievement in WWE and is contested exclusively on the SmackDown brand.</p>
+                    <p>The current design features a large WWE logo in the center with customizable side plates for each champion.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/roman-reigns.jpg" alt="Roman Reigns">
+                                <span>Roman Reigns</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/cody-rhodes.jpg" alt="Cody Rhodes">
+                                <span>Cody Rhodes</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/roman-reigns.jpg" alt="Roman Reigns">
+                                <span>Roman Reigns</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/brock-lesnar.jpg" alt="Brock Lesnar">
+                                <span>Brock Lesnar</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=wwe-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- World Heavyweight Championship -->
+            <div class="championship-detail world-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/world-heavyweight-championship-full.jpg" alt="World Heavyweight Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2023</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">World Heavyweight Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/seth-rollins.jpg" alt="Seth Rollins" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Seth Rollins</h3>
+                            <p class="reign-info">51+ days • 1st reign</p>
+                            <p>Won at SummerSlam 2025 (August 2, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The World Heavyweight Championship was reintroduced in 2023 as the top championship of the Raw brand. It was created to give Raw its own world championship after the WWE Championship became exclusive to SmackDown.</p>
+                    <p>The current design features a large center plate with a globe design and the WWE logo prominently displayed.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/gunther.jpg" alt="Gunther">
+                                <span>Gunther</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/damian-priest.jpg" alt="Damian Priest">
+                                <span>Damian Priest</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/drew-mcintyre.jpg" alt="Drew McIntyre">
+                                <span>Drew McIntyre</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/seth-rollins.jpg" alt="Seth Rollins">
+                                <span>Seth Rollins</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=world-heavyweight-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Women's Championships -->
+        <div class="championship-content" data-id="womens">
+            <h2 class="section-title">Women's Championships</h2>
+            
+            <!-- WWE Women's Championship -->
+            <div class="championship-detail womens-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/wwe-womens-championship-full.jpg" alt="WWE Women's Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2023</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Women's Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/tiffany-stratton.jpg" alt="Tiffany Stratton" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Tiffany Stratton</h3>
+                            <p class="reign-info">262+ days • 1st reign</p>
+                            <p>Won on SmackDown (January 3, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Women's Championship is the top women's championship on the SmackDown brand. It was established in 2023 as part of WWE's brand split championship restructuring.</p>
+                    <p>Tiffany Stratton won the championship by cashing in her Money in the Bank contract, and has since become one of the longest-reigning champions in recent history.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/bayley.jpg" alt="Bayley">
+                                <span>Bayley</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/bianca-belair.jpg" alt="Bianca Belair">
+                                <span>Bianca Belair</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/charlotte-flair.jpg" alt="Charlotte Flair">
+                                <span>Charlotte Flair</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/rhea-ripley.jpg" alt="Rhea Ripley">
+                                <span>Rhea Ripley</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=wwe-womens-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- Women's World Championship -->
+            <div class="championship-detail womens-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/womens-world-championship-full.jpg" alt="Women's World Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2023</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">Women's World Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/stephanie-vaquer.jpg" alt="Stephanie Vaquer" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Stephanie Vaquer</h3>
+                            <p class="reign-info">2+ days • 1st reign</p>
+                            <p>Won at WWE Wrestlepalooza (September 20, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The Women's World Championship is the top women's championship on the Raw brand. It was established in 2023 to give Raw its own women's world championship.</p>
+                    <p>Stephanie Vaquer defeated IYO SKY in a tournament final at WWE Wrestlepalooza to win the vacant championship, becoming the first Latin American woman to hold this title.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/iyo-sky.jpg" alt="IYO SKY">
+                                <span>IYO SKY</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/rhea-ripley.jpg" alt="Rhea Ripley">
+                                <span>Rhea Ripley</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/liv-morgan.jpg" alt="Liv Morgan">
+                                <span>Liv Morgan</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/becky-lynch.jpg" alt="Becky Lynch">
+                                <span>Becky Lynch</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=womens-world-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- Women's Intercontinental Championship -->
+            <div class="championship-detail midcard-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/womens-intercontinental-championship-full.jpg" alt="WWE Women's Intercontinental Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2024</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Women's Intercontinental Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/becky-lynch.jpg" alt="Becky Lynch" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Becky Lynch</h3>
+                            <p class="reign-info">107+ days • 1st reign</p>
+                            <p>Won at Money in the Bank 2025 (June 7, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Women's Intercontinental Championship was introduced in 2024 as a midcard championship for the women's division on Raw. It was created to provide more championship opportunities for the expanding women's roster.</p>
+                    <p>The design is inspired by the men's Intercontinental Championship but features unique elements to distinguish it as a women's title.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/dakota-kai.jpg" alt="Dakota Kai">
+                                <span>Dakota Kai</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/asuka.jpg" alt="Asuka">
+                                <span>Asuka</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/lyra-valkyria.jpg" alt="Lyra Valkyria">
+                                <span>Lyra Valkyria</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=womens-intercontinental-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- Women's United States Championship -->
+            <div class="championship-detail midcard-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/womens-united-states-championship-full.jpg" alt="WWE Women's United States Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2024</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Women's United States Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/giulia.jpg" alt="Giulia" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Giulia</h3>
+                            <p class="reign-info">87+ days • 1st reign</p>
+                            <p>Won on SmackDown (June 27, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Women's United States Championship was introduced in 2024 as a midcard championship for the women's division on SmackDown. It was created alongside the Women's Intercontinental Championship to provide more opportunities for female superstars.</p>
+                    <p>Giulia won the championship shortly after her debut in WWE, establishing herself as one of the top stars in the women's division.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/jade-cargill.jpg" alt="Jade Cargill">
+                                <span>Jade Cargill</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/naomi.jpg" alt="Naomi">
+                                <span>Naomi</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/chelsea-green.jpg" alt="Chelsea Green">
+                                <span>Chelsea Green</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=womens-united-states-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Midcard Championships -->
+        <div class="championship-content" data-id="midcard">
+            <h2 class="section-title">Midcard Championships</h2>
+            
+            <!-- Intercontinental Championship -->
+            <div class="championship-detail midcard-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/intercontinental-championship-full.jpg" alt="WWE Intercontinental Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 1979</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Intercontinental Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/dominik-mysterio.jpg" alt="Dominik Mysterio" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Dominik Mysterio</h3>
+                            <p class="reign-info">155+ days • 1st reign</p>
+                            <p>Won at WrestleMania 41 (April 20, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Intercontinental Championship is one of the most prestigious midcard championships in WWE history. It has been held by numerous Hall of Famers and is often seen as a stepping stone to world championship status.</p>
+                    <p>Dominik Mysterio won the championship at WrestleMania 41, defeating Bron Breakker in a highly acclaimed match.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/bron-breakker.jpg" alt="Bron Breakker">
+                                <span>Bron Breakker</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/gunther.jpg" alt="Gunther">
+                                <span>Gunther</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/sami-zayn.jpg" alt="Sami Zayn">
+                                <span>Sami Zayn</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/shinsuke-nakamura.jpg" alt="Shinsuke Nakamura">
+                                <span>Shinsuke Nakamura</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=intercontinental-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- United States Championship -->
+            <div class="championship-detail midcard-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/united-states-championship-full.jpg" alt="WWE United States Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 1975</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE United States Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/sami-zayn.jpg" alt="Sami Zayn" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Sami Zayn</h3>
+                            <p class="reign-info">24+ days • 3rd reign</p>
+                            <p>Won on SmackDown (August 29, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE United States Championship has a rich history dating back to its origins in the NWA/WCW. It was integrated into WWE in 2001 following the purchase of WCW and has since become one of WWE's most prestigious midcard championships.</p>
+                    <p>Sami Zayn is in his third reign as United States Champion, having defeated LA Knight to win the title.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/la-knight.jpg" alt="LA Knight">
+                                <span>LA Knight</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/andrade.jpg" alt="Andrade">
+                                <span>Andrade</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/rey-mysterio.jpg" alt="Rey Mysterio">
+                                <span>Rey Mysterio</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/logan-paul.jpg" alt="Logan Paul">
+                                <span>Logan Paul</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=united-states-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tag Team Championships -->
+        <div class="championship-content" data-id="tag">
+            <h2 class="section-title">Tag Team Championships</h2>
+            
+            <!-- World Tag Team Championship -->
+            <div class="championship-detail tag-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/world-tag-team-championship-full.jpg" alt="World Tag Team Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2023</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">World Tag Team Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/judgment-day.jpg" alt="The Judgment Day" class="holder-image">
+                        <div class="holder-info">
+                            <h3>The Judgment Day (Finn Bálor & JD McDonagh)</h3>
+                            <p class="reign-info">84+ days • 1st reign</p>
+                            <p>Won on Raw (June 30, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The World Tag Team Championship is the top tag team championship on the Raw brand. It was reintroduced in 2023 as part of WWE's championship restructuring.</p>
+                    <p>The Judgment Day has been dominant in the tag team division, with Finn Bálor and JD McDonagh representing the faction as the current champions.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/awesome-truth.jpg" alt="The Awesome Truth">
+                                <span>The Awesome Truth</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/alpha-academy.jpg" alt="Alpha Academy">
+                                <span>Alpha Academy</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/creed-brothers.jpg" alt="The Creed Brothers">
+                                <span>The Creed Brothers</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=world-tag-team-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- WWE Tag Team Championship -->
+            <div class="championship-detail tag-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/wwe-tag-team-championship-full.jpg" alt="WWE Tag Team Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2023</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Tag Team Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/wyatt-sicks.jpg" alt="The Wyatt Sicks" class="holder-image">
+                        <div class="holder-info">
+                            <h3>The Wyatt Sicks (Dexter Lumis & Joe Gacy)</h3>
+                            <p class="reign-info">73+ days • 1st reign</p>
+                            <p>Won on SmackDown (July 11, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Tag Team Championship is the top tag team championship on the SmackDown brand. It was reintroduced in 2023 as part of WWE's championship restructuring.</p>
+                    <p>The Wyatt Sicks, a faction formed in tribute to the late Bray Wyatt, captured the championships in a dominant performance against The Street Profits.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/street-profits.jpg" alt="The Street Profits">
+                                <span>The Street Profits</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/bloodline.jpg" alt="The Bloodline">
+                                <span>The Bloodline</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/uso-rhodes.jpg" alt="Cody Rhodes & Jey Uso">
+                                <span>Rhodes & Uso</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=wwe-tag-team-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- Women's Tag Team Championship -->
+            <div class="championship-detail womens-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/womens-tag-team-championship-full.jpg" alt="WWE Women's Tag Team Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2019</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">WWE Women's Tag Team Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/bliss-flair.jpg" alt="Alexa Bliss & Charlotte Flair" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Alexa Bliss & Charlotte Flair</h3>
+                            <p class="reign-info">51+ days • 1st reign</p>
+                            <p>Won at SummerSlam 2025 (August 2, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The WWE Women's Tag Team Championship is contested across all WWE brands. It was established in 2019 to provide more opportunities for women's tag teams in WWE.</p>
+                    <p>The unlikely alliance of Alexa Bliss and Charlotte Flair has proven to be a dominant force in the women's tag team division.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/damage-ctrl.jpg" alt="Damage CTRL">
+                                <span>Damage CTRL</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/kabuki-warriors.jpg" alt="The Kabuki Warriors">
+                                <span>The Kabuki Warriors</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/toxic-attraction.jpg" alt="Toxic Attraction">
+                                <span>Toxic Attraction</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=womens-tag-team-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NXT Championships -->
+        <div class="championship-content" data-id="nxt">
+            <h2 class="section-title">NXT Championships</h2>
+            
+            <!-- NXT Championship -->
+            <div class="championship-detail world-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/nxt-championship-full.jpg" alt="NXT Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2012</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">NXT Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/oba-femi.jpg" alt="Oba Femi" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Oba Femi</h3>
+                            <p class="reign-info">258+ days • 1st reign</p>
+                            <p>Won at NXT New Year's Evil (January 7, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The NXT Championship is the top men's championship in WWE's NXT brand. It has been held by many superstars who went on to become major stars on the main roster.</p>
+                    <p>Oba Femi has had one of the most dominant championship reigns in recent NXT history, successfully defending his title against all challengers for over 250 days.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/trick-williams.jpg" alt="Trick Williams">
+                                <span>Trick Williams</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/carmelo-hayes.jpg" alt="Carmelo Hayes">
+                                <span>Carmelo Hayes</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/ilja-dragunov.jpg" alt="Ilja Dragunov">
+                                <span>Ilja Dragunov</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=nxt-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+            
+            <!-- NXT Women's Championship -->
+            <div class="championship-detail womens-title">
+                <div class="championship-image-container">
+                    <img src="../assets/images/championships/nxt-womens-championship-full.jpg" alt="NXT Women's Championship" class="championship-image">
+                    <div class="championship-overlay">
+                        <h3>Established: 2013</h3>
+                    </div>
+                </div>
+                <div class="championship-info">
+                    <h2 class="championship-name">NXT Women's Championship</h2>
+                    <div class="championship-holder">
+                        <img src="../assets/images/superstars/jacy-jayne.jpg" alt="Jacy Jayne" class="holder-image">
+                        <div class="holder-info">
+                            <h3>Jacy Jayne</h3>
+                            <p class="reign-info">118+ days • 1st reign</p>
+                            <p>Won on NXT (May 27, 2025)</p>
+                        </div>
+                    </div>
+                    <p>The NXT Women's Championship is the top women's championship in WWE's NXT brand. It has been held by many of the greatest female superstars in WWE history.</p>
+                    <p>Jacy Jayne captured the championship in a surprise victory over Roxanne Perez, ending Perez's record-setting reign.</p>
+                    
+                    <div class="championship-history">
+                        <h3 class="history-title">Recent Champions</h3>
+                        <div class="previous-holders">
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/roxanne-perez.jpg" alt="Roxanne Perez">
+                                <span>Roxanne Perez</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/tiffany-stratton.jpg" alt="Tiffany Stratton">
+                                <span>Tiffany Stratton</span>
+                            </div>
+                            <div class="previous-holder">
+                                <img src="../assets/images/superstars/lyra-valkyria.jpg" alt="Lyra Valkyria">
+                                <span>Lyra Valkyria</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="championship-history.html?id=nxt-womens-championship" class="btn" style="margin-top: 1.5rem;">View Full History</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.png" alt="WWE Access Organization Logo">
+                    <p>Your ultimate source for WWE championship information and superstar profiles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="championships.html">Championships</a></li>
+                        <li><a href="superstars.html">Superstars</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Championships</h4>
+                    <ul>
+                        <li><a href="#world" class="championship-link" data-target="world">World Championships</a></li>
+                        <li><a href="#womens" class="championship-link" data-target="womens">Women's Championships</a></li>
+                        <li><a href="#midcard" class="championship-link" data-target="midcard">Midcard Championships</a></li>
+                        <li><a href="#tag" class="championship-link" data-target="tag">Tag Team Championships</a></li>
+                        <li><a href="#nxt" class="championship-link" data-target="nxt">NXT Championships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@wweaccessorg.com</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Stamford, CT, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 WWE Access Organization. All rights reserved.</p>
+                <p>This is a fan site and is not affiliated with WWE. WWE is a registered trademark of World Wrestling Entertainment, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Championship tabs functionality
+            const championshipTabs = document.querySelectorAll('.championship-tab');
+            const championshipContents = document.querySelectorAll('.championship-content');
+            const championshipLinks = document.querySelectorAll('.championship-link');
+            
+            // Tab click functionality
+            championshipTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.dataset.target;
+                    
+                    // Remove active class from all tabs and contents
+                    championshipTabs.forEach(tab => tab.classList.remove('active'));
+                    championshipContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    this.classList.add('active');
+                    document.querySelector(`.championship-content[data-id="${target}"]`).classList.add('active');
+                });
+            });
+            
+            // Footer links functionality
+            championshipLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.dataset.target;
+                    
+                    // Remove active class from all tabs and contents
+                    championshipTabs.forEach(tab => tab.classList.remove('active'));
+                    championshipContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to corresponding tab and content
+                    document.querySelector(`.championship-tab[data-target="${target}"]`).classList.add('active');
+                    document.querySelector(`.championship-content[data-id="${target}"]`).classList.add('active');
+                    
+                    // Scroll to the championships section
+                    document.querySelector('.championship-tabs').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            // Check for hash in URL
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                const tab = document.querySelector(`.championship-tab[data-target="${hash}"]`);
+                
+                if (tab) {
+                    // Remove active class from all tabs and contents
+                    championshipTabs.forEach(tab => tab.classList.remove('active'));
+                    championshipContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to corresponding tab and content
+                    tab.classList.add('active');
+                    document.querySelector(`.championship-content[data-id="${hash}"]`).classList.add('active');
+                    
+                    // Scroll to the championships section
+                    setTimeout(() => {
+                        document.querySelector('.championship-tabs').scrollIntoView({ behavior: 'smooth' });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

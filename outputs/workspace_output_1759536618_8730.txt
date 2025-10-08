@@ -1,0 +1,20 @@
+total 340
+drwxr-xr-x 1 root root 4096 Oct  4 00:10 .
+drwxr-xr-x 1 root root   32 Sep 28 06:09 ..
+-rw-r--r-- 1 root root 8124 Oct  4 00:10 alba-fyre.jpg
+-rw-r--r-- 1 root root 8485 Oct  4 00:10 andre-chase.jpg
+-rw-r--r-- 1 root root 8615 Oct  4 00:10 becky-lynch.jpg
+-rw-r--r-- 1 root root 8461 Oct  4 00:10 brock-lesnar.jpg
+-rw-r--r-- 1 root root 7837 Oct  4 00:10 chase-u.jpg
+-rw-r--r-- 1 root root 8700 Oct  4 00:10 cody-rhodes.jpg
+-rw-r--r-- 1 root root 8373 Oct  4 00:10 dragon-lee.jpg
+-rw-r--r-- 1 root root 8500 Oct  4 00:10 duke-hudson.jpg
+-rw-r--r-- 1 root root 8672 Oct  4 00:10 fallon-henley.jpg
+-rw-r--r-- 1 root root 7492 Oct  4 00:10 giulia.jpg
+-rw-r--r-- 1 root root 7788 Oct  4 00:10 gunther.jpg
+-rw-r--r-- 1 root root 7890 Oct  4 00:10 isla-dawn.jpg
+-rw-r--r-- 1 root root 8178 Oct  4 00:10 jacob-fatu.jpg
+-rw-r--r-- 1 root root 8307 Oct  4 00:10 jacy-jayne.jpg
+-rw-r--r-- 1 root root 8568 Oct  4 00:10 jade-cargill.jpg
+-rw-r--r-- 1 root root 8826 Oct  4 00:10 jakara-jackson.jpg
+-rw-r--r-- 1 root root 7790 Oct  4 00:10 jey-uso.jpg

@@ -1,0 +1,25 @@
+Created placeholder HTML for Roman Reigns
+Created placeholder HTML for John Cena
+Created placeholder HTML for Brock Lesnar
+Created placeholder HTML for Seth Rollins
+Created placeholder HTML for Cody Rhodes
+Created placeholder HTML for Becky Lynch
+Created placeholder HTML for Dominik Mysterio
+Created placeholder HTML for Giulia
+Created placeholder HTML for Tiffany Stratton
+Created placeholder HTML for Stephanie Vaquer
+Created placeholder HTML for Sami Zayn
+Created placeholder HTML for Gunther
+Created placeholder HTML for Rhea Ripley
+Created placeholder HTML for Jey Uso
+Created placeholder HTML for Solo Sikoa
+Created placeholder HTML for Randy Orton
+Created placeholder HTML for AJ Styles
+Created placeholder HTML for Bobby Lashley
+
+Placeholder HTML files have been created in /workspace/assets/images/placeholders
+To create images:
+1. Open each HTML file in a browser
+2. Take a screenshot or use browser tools to save as image
+3. Save the image as a JPG file with the same name in the superstars directory
+

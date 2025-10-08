@@ -1,0 +1,25 @@
+total 608
+drwxr-xr-x 2 root root  4096 Sep 28 11:19 .
+drwxr-xr-x 1 root root   159 Sep 28 06:05 ..
+-rw-r--r-- 1 root root 25352 Sep 28 11:08 about.html
+-rw-r--r-- 1 root root 20024 Sep 28 06:05 becky-lynch.html
+-rw-r--r-- 1 root root 22830 Sep 28 06:05 brock-lesnar.html
+-rw-r--r-- 1 root root 82016 Sep 28 11:19 championships.html
+-rw-r--r-- 1 root root 51004 Sep 28 06:05 championships.html.bak
+-rw-r--r-- 1 root root 51004 Sep 28 11:10 championships.html.old
+-rw-r--r-- 1 root root 20416 Sep 28 06:05 cody-rhodes.html
+-rw-r--r-- 1 root root 18936 Sep 28 11:09 contact.html
+-rw-r--r-- 1 root root 30999 Sep 28 11:07 events.html
+-rw-r--r-- 1 root root 16534 Sep 28 06:09 jacob-fatu.html
+-rw-r--r-- 1 root root   862 Sep 28 06:13 jey-uso-card.html
+-rw-r--r-- 1 root root 16544 Sep 28 06:07 jey-uso.html
+-rw-r--r-- 1 root root 16232 Sep 28 06:06 jimmy-uso.html
+-rw-r--r-- 1 root root 22097 Sep 28 06:05 john-cena.html
+-rw-r--r-- 1 root root 21118 Sep 28 06:05 roman-reigns.html
+-rw-r--r-- 1 root root 20307 Sep 28 06:05 seth-rollins.html
+-rw-r--r-- 1 root root 15967 Sep 28 06:08 solo-sikoa.html
+-rw-r--r-- 1 root root  9746 Sep 28 06:05 superstar-template.html
+-rw-r--r-- 1 root root 19929 Sep 28 06:05 superstar.html
+-rw-r--r-- 1 root root  2285 Sep 28 06:13 superstars-update.html
+-rw-r--r-- 1 root root 46832 Sep 28 06:14 superstars.html
+-rw-r--r-- 1 root root 43687 Sep 28 06:11 superstars.html.bak

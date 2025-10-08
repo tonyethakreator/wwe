@@ -1,0 +1,50 @@
+        .superstar-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .champion-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .superstar-image {
+            transition: transform 0.5s ease;
+        }
+--
+        .superstar-card:hover .superstar-image {
+            transform: scale(1.05);
+        }
+        
+        .superstar-info {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .superstar-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .superstar-stat {
+            display: flex;
+            align-items: center;
+        }
+        
+--
+                <div class="superstar-card" data-brand="raw" data-gender="men" data-champion="true">
+                    <div class="champion-badge">World Champion</div>
+                    <img src="../assets/images/superstars/seth-rollins.jpg" alt="Seth Rollins" class="superstar-image">
+                    <div class="superstar-info">
+                        <h3 class="superstar-name">Seth Rollins</h3>
+                        <div class="superstar-stats">

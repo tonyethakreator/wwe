@@ -1,0 +1,144 @@
+99:        .booking-form {
+100-            background-color: var(--wwe-dark-gray);
+101-            padding: 2rem;
+102-            border-radius: 8px;
+103-            margin-top: 2rem;
+104-        }
+105-        
+106-        .form-group {
+107-            margin-bottom: 1.5rem;
+108-        }
+109-        
+110-        .form-group label {
+111-            display: block;
+112-            margin-bottom: 0.5rem;
+113-            font-weight: 600;
+114-        }
+115-        
+116-        .form-group input,
+117-        .form-group select,
+118-        .form-group textarea {
+119-            width: 100%;
+--
+221:                    <a href="#booking-form" class="btn">Book This Event</a>
+222-                </div>
+223-            </div>
+224-        </div>
+225-
+226-        <!-- Meet & Greets -->
+227-        <div class="event-content" id="meet-greet">
+228-            <div class="event-card">
+229-                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+230-                <div class="event-info">
+231-                    <h3 class="event-title">WWE Superstar Meet & Greet</h3>
+232-                    <p class="event-price">Starting at $7,500</p>
+233-                    <p class="event-description">Organize an exclusive meet and greet event with a WWE Superstar for your fans, customers, or community. This package is perfect for retail stores, malls, conventions, or special fan events where you want to create excitement and draw crowds.</p>
+234-                    
+235-                    <div class="event-features">
+236-                        <h4>Package Includes:</h4>
+237-                        <div class="event-feature">
+238-                            <i class="fas fa-check-circle"></i>
+239-                            <span>3-hour appearance by a WWE Superstar</span>
+240-                        </div>
+241-                        <div class="event-feature">
+--
+259:                    <a href="#booking-form" class="btn">Book This Event</a>
+260-                </div>
+261-            </div>
+262-        </div>
+263-
+264-        <!-- Burial Events -->
+265-        <div class="event-content" id="burial">
+266-            <div class="event-card">
+267-                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+268-                <div class="event-info">
+269-                    <h3 class="event-title">Burial Ceremony with WWE Superstar</h3>
+270-                    <p class="event-price">Starting at $12,500</p>
+271-                    <p class="event-description">Honor your loved one with a special burial ceremony attended by a WWE Superstar. This unique package brings dignity and star power to memorial services for wrestling fans, creating a memorable tribute that celebrates their passion for WWE.</p>
+272-                    
+273-                    <div class="event-features">
+274-                        <h4>Package Includes:</h4>
+275-                        <div class="event-feature">
+276-                            <i class="fas fa-check-circle"></i>
+277-                            <span>3-hour appearance by a WWE Superstar</span>
+278-                        </div>
+279-                        <div class="event-feature">
+--
+301:                    <a href="#booking-form" class="btn">Book This Event</a>
+302-                </div>
+303-            </div>
+304-        </div>
+305-
+306-        <!-- Charity Events -->
+307-        <div class="event-content" id="charity">
+308-            <div class="event-card">
+309-                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+310-                <div class="event-info">
+311-                    <h3 class="event-title">Charity Event with WWE Superstar</h3>
+312-                    <p class="event-price">Starting at $8,000</p>
+313-                    <p class="event-description">Boost your fundraising efforts with a WWE Superstar appearance at your charity event. WWE Superstars are passionate about giving back to the community and can help draw attention to your cause, increase attendance, and maximize donations.</p>
+314-                    
+315-                    <div class="event-features">
+316-                        <h4>Package Includes:</h4>
+317-                        <div class="event-feature">
+318-                            <i class="fas fa-check-circle"></i>
+319-                            <span>4-hour appearance by a WWE Superstar</span>
+320-                        </div>
+321-                        <div class="event-feature">
+--
+343:                    <a href="#booking-form" class="btn">Book This Event</a>
+344-                </div>
+345-            </div>
+346-        </div>
+347-
+348-        <!-- Other Events -->
+349-        <div class="event-content" id="other">
+350-            <div class="event-card">
+351-                <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+352-                <div class="event-info">
+353-                    <h3 class="event-title">Custom WWE Superstar Appearances</h3>
+354-                    <p class="event-price">Contact for Pricing</p>
+355-                    <p class="event-description">Have a unique event in mind? WWE Superstars are available for a wide range of special occasions including charity events, hospital visits, school appearances, weddings, and more. We can create a custom package tailored to your specific needs.</p>
+356-                    
+357-                    <div class="event-features">
+358-                        <h4>Custom Events Include:</h4>
+359-                        <div class="event-feature">
+360-                            <i class="fas fa-check-circle"></i>
+361-                            <span>Charity fundraisers and galas</span>
+362-                        </div>
+363-                        <div class="event-feature">
+--
+381:                    <a href="#booking-form" class="btn">Inquire About Custom Events</a>
+382-                </div>
+383-            </div>
+384-        </div>
+385-    </section>
+386-
+387-    <!-- Booking Form Section -->
+388:    <section class="container section" id="booking-form">
+389-        <div class="section-header">
+390-            <h2 class="section-title">Book Your WWE Superstar Event</h2>
+391-            <p class="section-description">Fill out the form below to start the booking process</p>
+392-        </div>
+393-
+394:        <div class="booking-form">
+395-            <form action="mailto:wwesuperstarsbooking@gmail.com" method="post" enctype="text/plain">
+396-                <div class="form-group">
+397-                    <label for="name">Your Name *</label>
+398-                    <input type="text" id="name" name="name" required>
+399-                </div>
+400-                
+401-                <div class="form-group">
+402-                    <label for="email">Email Address *</label>
+403-                    <input type="email" id="email" name="email" required>
+404-                </div>
+405-                
+406-                <div class="form-group">
+407-                    <label for="phone">Phone Number *</label>
+408-                    <input type="tel" id="phone" name="phone" required>
+409-                </div>
+410-                
+411-                <div class="form-group">
+412-                    <label for="event-type">Event Type *</label>
+413-                    <select id="event-type" name="event-type" required>
+414-                        <option value="">Select Event Type</option>

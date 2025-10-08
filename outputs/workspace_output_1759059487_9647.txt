@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWE Events & Bookings - WWE Access Organization</title>
+    <meta name="description" content="Book WWE Superstars for your events - Birthday Parties, Meet & Greets, Grand Openings and more">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <style>
+        /* Additional styles specific to events page */
+        .event-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .event-tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .event-tab.active {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        
+        .event-tab:hover:not(.active) {
+            background-color: var(--wwe-gray);
+        }
+        
+        .event-content {
+            display: none;
+        }
+        
+        .event-content.active {
+            display: block;
+        }
+        
+        .event-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background-color: var(--wwe-gray);

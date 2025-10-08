@@ -1,0 +1,7 @@
+total 4
+drwxr-xr-x 2 root root   90 Sep 28 06:10 .
+drwxr-xr-x 5 root root 4096 Sep 28 06:09 ..
+-rw-r--r-- 1 root root    0 Sep 28 06:10 jacob-fatu.jpg
+-rw-r--r-- 1 root root    0 Sep 28 06:10 jey-uso.jpg
+-rw-r--r-- 1 root root    0 Sep 28 06:10 jimmy-uso.jpg
+-rw-r--r-- 1 root root    0 Sep 28 06:10 solo-sikoa.jpg

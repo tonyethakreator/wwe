@@ -1,0 +1,21 @@
+311:                    <h3 class="event-title">Charity Event with WWE Superstar</h3>
+312-                    <p class="event-price">Starting at $8,000</p>
+313-                    <p class="event-description">Boost your fundraising efforts with a WWE Superstar appearance at your charity event. WWE Superstars are passionate about giving back to the community and can help draw attention to your cause, increase attendance, and maximize donations.</p>
+314-                    
+315-                    <div class="event-features">
+316-                        <h4>Package Includes:</h4>
+317-                        <div class="event-feature">
+318-                            <i class="fas fa-check-circle"></i>
+319-                            <span>Customized appearance based on your needs</span>
+320-                        </div>
+321-                        <div class="event-feature">
+322-                            <i class="fas fa-check-circle"></i>
+323-                            <span>Motivational speech option</span>
+324-                        </div>
+325-                        <div class="event-feature">
+326-                            <i class="fas fa-check-circle"></i>
+327-                            <span>Team-building activities led by the Superstar</span>
+328-                        </div>
+329-                        <div class="event-feature">
+330-                            <i class="fas fa-check-circle"></i>
+331-                            <span>Photo opportunities with executives and employees</span>

@@ -1,0 +1,4 @@
+1184:            <!-- NXT Tag Team Championship -->
+1187:                    <img src="https://www.wwe.com/f/styles/wwe_16_9_l/public/all/2022/04/20220402_NXT_StandDeliver_Results_MSK--a9d9e6a6b3c6d5a7e2d1e0b8b3c4d9e8.jpg" alt="NXT Tag Team Championship">
+1193:                    <h2 class="championship-name">NXT Tag Team Championship</h2>
+1205:                    <p>The NXT Tag Team Championship represents the pinnacle of tag team wrestling in WWE's NXT brand. It showcases the importance of teamwork, coordination, and tag team strategy in NXT.</p>

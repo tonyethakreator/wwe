@@ -1,0 +1,34 @@
+556-                    <p>The Women's Intercontinental Championship was introduced in 2024 as a midcard championship for the women's division on Raw. It provides another avenue for female superstars to showcase their talents and elevate their careers.</p>
+557-                    <p>The design is inspired by the men's Intercontinental Championship but features unique elements that distinguish it as a premier women's title. The white strap with gold and blue accents gives it a distinctive look.</p>
+558-                    
+559-                    <div class="championship-history">
+560-                        <h3 class="history-title">All Champions</h3>
+561-                        <div class="previous-holders">
+562-                            <div class="previous-holder">
+563-                                <img src="../assets/images/superstars/lyra-valkyria.jpg" alt="Lyra Valkyria">
+--
+609:                    <div class="championship-holder">
+610-                        <img src="../assets/images/superstars/jey-uso.jpg" alt="Jey Uso" class="holder-image">
+611-                        <div class="holder-info">
+612-                            <h3>Jey Uso</h3>
+613-                            <p class="reign-info">30+ days • 1st reign</p>
+614-                            <p>Won at SummerSlam 2025 (August 3, 2025)</p>
+615-                        </div>
+616-                    </div>
+617-                    <p>The Intercontinental Championship is one of WWE's most prestigious midcard titles and has been held by some of the greatest technical wrestlers in history. Often referred to as the "workhorse championship," it represents excellence in in-ring performance.</p>
+618-                    <p>The current design is a modernized version of the classic white-strapped Intercontinental Championship, featuring a white leather strap with a centerpiece displaying a globe and continental design elements.</p>
+619-                    
+620-                    <div class="championship-history">
+621-                        <h3 class="history-title">Recent Champions</h3>
+622-                        <div class="previous-holders">
+623-                            <div class="previous-holder">
+624-                                <img src="../assets/images/superstars/gunther.jpg" alt="Gunther">
+--
+679:                    <div class="championship-holder">
+680-                        <img src="../assets/images/superstars/sami-zayn.jpg" alt="Sami Zayn" class="holder-image">
+681-                        <div class="holder-info">
+682-                            <h3>Sami Zayn</h3>
+683-                            <p class="reign-info">90+ days • 3rd reign</p>
+684-                            <p>Won at Clash at the Castle 2025 (May 25, 2025)</p>
+685-                        </div>
+686-                    </div>

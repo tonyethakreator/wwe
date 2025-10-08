@@ -1,0 +1,2 @@
+680:                        <img src="../assets/images/superstars/la-knight.jpg" alt="LA Knight" class="holder-image">
+694:                                <img src="../assets/images/superstars/la-knight.jpg" alt="LA Knight">

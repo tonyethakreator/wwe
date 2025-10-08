@@ -1,0 +1,11 @@
+878-                </div>
+879-                <div class="footer-links">
+880-                    <h4>Contact Us</h4>
+881-                    <ul>
+882-                        <li><i class="fas fa-envelope"></i> info@wweaccessorg.com</li>
+883:                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+884-                        <li><i class="fas fa-map-marker-alt"></i> Stamford, CT, USA</li>
+885-                    </ul>
+886-                </div>
+887-            </div>
+888-            <div class="copyright">

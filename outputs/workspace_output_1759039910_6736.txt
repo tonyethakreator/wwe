@@ -1,0 +1,2 @@
+400:        <!-- SmackDown Superstars -->
+402:            <h2 class="brand-title">SmackDown Superstars</h2>

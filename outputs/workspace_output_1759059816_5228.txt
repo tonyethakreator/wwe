@@ -1,0 +1,21 @@
+269:                    <h3 class="event-title">Burial Ceremony with WWE Superstar</h3>
+270-                    <p class="event-price">Starting at $12,500</p>
+271-                    <p class="event-description">Honor your loved one with a special burial ceremony attended by a WWE Superstar. This unique package brings dignity and star power to memorial services for wrestling fans, creating a memorable tribute that celebrates their passion for WWE.</p>
+272-                    
+273-                    <div class="event-features">
+274-                        <h4>Package Includes:</h4>
+275-                        <div class="event-feature">
+276-                            <i class="fas fa-check-circle"></i>
+277-                            <span>4-hour appearance by a WWE Superstar</span>
+278-                        </div>
+279-                        <div class="event-feature">
+280-                            <i class="fas fa-check-circle"></i>
+281-                            <span>Ribbon cutting ceremony participation</span>
+282-                        </div>
+283-                        <div class="event-feature">
+284-                            <i class="fas fa-check-circle"></i>
+285-                            <span>Media interviews and photo opportunities</span>
+286-                        </div>
+287-                        <div class="event-feature">
+288-                            <i class="fas fa-check-circle"></i>
+289-                            <span>Meet and greet with customers/attendees</span>
