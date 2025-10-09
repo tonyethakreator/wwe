@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': "Now let's copy the tools:\n\n<function_calls>\n<execute-command>\ncp src/tools/* tools/\n</execute-command>\n</function_calls>"}

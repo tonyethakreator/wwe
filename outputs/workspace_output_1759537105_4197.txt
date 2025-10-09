@@ -1,2 +1,0 @@
-610:                        <img src="../assets/images/superstars/jey-uso.jpg" alt="Jey Uso" class="holder-image">
-636:                                <img src="../assets/images/superstars/jey-uso.jpg" alt="Jey Uso">

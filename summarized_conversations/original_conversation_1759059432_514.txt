@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': "Let's insert Jey Uso after Dominik Mysterio instead of replacing him:\n\n<function_calls>\n<execute-command>\nsed -i '300r pages/jey-uso-card.html' pages/superstars.html\n</execute-command>\n</function_calls>"}

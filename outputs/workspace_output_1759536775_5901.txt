@@ -1,1 +1,0 @@
-237:    <section class="page-hero" style="background-image: url('../assets/images/championships-bg.jpg');">

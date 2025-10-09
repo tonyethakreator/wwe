@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': 'Let me check the existing superstar profiles to understand their structure:\n\n<function_calls>\n<execute-command>\nhead -n 50 src/pages/jimmy-uso.html 2>/dev/null || echo "File does not exist"\n</execute-command>\n</function_calls>'}

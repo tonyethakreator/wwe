@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': 'Now let\'s add Jey Uso to the Raw superstars section. First, let\'s find where the Raw superstars section is:\n\n<function_calls>\n<execute-command>\ngrep -n "Raw Superstars" pages/superstars.html\n</execute-command>\n</function_calls>'}

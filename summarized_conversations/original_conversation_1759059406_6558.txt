@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': "Let's copy the main index.html file to the root directory:\n\n<function_calls>\n<execute-command>\ncp src/index.html ./\n</execute-command>\n</function_calls>"}

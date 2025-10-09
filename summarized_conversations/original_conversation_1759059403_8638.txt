@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': "Now I'll check the main index.html file:\n\n<function_calls>\n<execute-command>\nhead -n 50 src/index.html\n</execute-command>\n</function_calls>"}

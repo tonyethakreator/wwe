@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': 'Let me also check the assets directory to understand the structure:\n\n<function_calls>\n<execute-command>\nls -la src/assets/\n</execute-command>\n</function_calls>'}

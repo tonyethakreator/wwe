@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': 'It seems there was an issue accessing the website directly. Let\'s try using web search to gather information about the WWE Access Organization website and current WWE champions.\n\n<function_calls>\n<web-search query="WWE Access Organization website structure content" num_results="5">\n</web-search>\n</function_calls>'}

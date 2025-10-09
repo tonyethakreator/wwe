@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': "Now let's check the WWE.com website to understand their design and structure:\n\n<function_calls>\n<browser-navigate-to>\nhttps://www.wwe.com\n</browser-navigate-to>\n</function_calls>"}

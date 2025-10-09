@@ -1,4 +1,0 @@
-13:        .championship-tabs {
-193:        <div class="championship-tabs">
-899:                    document.querySelector('.championship-tabs').scrollIntoView({ behavior: 'smooth' });
-919:                        document.querySelector('.championship-tabs').scrollIntoView({ behavior: 'smooth' });

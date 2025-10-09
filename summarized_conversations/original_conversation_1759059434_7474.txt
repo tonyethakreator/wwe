@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': 'Let\'s start a web server to test our website:\n\n<function_calls>\n<execute-command session_name="server" blocking="false">\ncd /workspace && python -m http.server 8000\n</execute-command>\n</function_calls>'}

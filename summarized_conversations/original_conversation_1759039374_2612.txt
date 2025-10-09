@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': 'Let\'s try using web search to get information about the WWE.com website design:\n\n<function_calls>\n<web-search query="WWE.com website design structure 2025" num_results="5">\n</web-search>\n</function_calls>'}

@@ -1,4 +1,0 @@
-191:                <div class="event-image" style="background-image: url('../assets/images/banners/birthday-banner.jpg');"></div>
-229:                <div class="event-image" style="background-image: url('../assets/images/banners/meet-greet-banner.jpg');"></div>
-267:                <div class="event-image" style="background-image: url('../assets/images/banners/burial-banner.jpg');"></div>
-309:                <div class="event-image" style="background-image: url('../assets/images/banners/charity-banner.jpg');"></div>

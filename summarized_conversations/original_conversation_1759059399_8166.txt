@@ -1,1 +1,0 @@
-{'role': 'assistant', 'content': "Now I'll check the images directory to see what superstar images we have:\n\n<function_calls>\n<execute-command>\nls -la src/assets/images/superstars/\n</execute-command>\n</function_calls>"}
